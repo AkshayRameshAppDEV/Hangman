@@ -105,8 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B96AF84225F4358900B521EC /* Main App Delegates */,
-				B96AF81025F4295D00B521EC /* ViewController.h */,
-				B96AF81125F4295D00B521EC /* ViewController.m */,
+				B96AF84A25F4366600B521EC /* Controllers */,
 				B96AF84625F435C200B521EC /* Storyboards */,
 				B96AF81625F4295D00B521EC /* Assets.xcassets */,
 				B96AF81B25F4295D00B521EC /* Info.plist */,
@@ -151,6 +150,15 @@
 				B96AF81825F4295D00B521EC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B96AF84A25F4366600B521EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B96AF81025F4295D00B521EC /* ViewController.h */,
+				B96AF81125F4295D00B521EC /* ViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
