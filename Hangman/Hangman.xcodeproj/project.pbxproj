@@ -104,15 +104,11 @@
 		B96AF80925F4295D00B521EC /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
-				B96AF80A25F4295D00B521EC /* AppDelegate.h */,
-				B96AF80B25F4295D00B521EC /* AppDelegate.m */,
-				B96AF80D25F4295D00B521EC /* SceneDelegate.h */,
-				B96AF80E25F4295D00B521EC /* SceneDelegate.m */,
+				B96AF84225F4358900B521EC /* Main App Delegates */,
 				B96AF81025F4295D00B521EC /* ViewController.h */,
 				B96AF81125F4295D00B521EC /* ViewController.m */,
-				B96AF81325F4295D00B521EC /* Main.storyboard */,
+				B96AF84625F435C200B521EC /* Storyboards */,
 				B96AF81625F4295D00B521EC /* Assets.xcassets */,
-				B96AF81825F4295D00B521EC /* LaunchScreen.storyboard */,
 				B96AF81B25F4295D00B521EC /* Info.plist */,
 				B96AF81C25F4295D00B521EC /* main.m */,
 			);
@@ -135,6 +131,26 @@
 				B96AF83325F4295E00B521EC /* Info.plist */,
 			);
 			path = HangmanUITests;
+			sourceTree = "<group>";
+		};
+		B96AF84225F4358900B521EC /* Main App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B96AF80A25F4295D00B521EC /* AppDelegate.h */,
+				B96AF80B25F4295D00B521EC /* AppDelegate.m */,
+				B96AF80D25F4295D00B521EC /* SceneDelegate.h */,
+				B96AF80E25F4295D00B521EC /* SceneDelegate.m */,
+			);
+			path = "Main App Delegates";
+			sourceTree = "<group>";
+		};
+		B96AF84625F435C200B521EC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B96AF81325F4295D00B521EC /* Main.storyboard */,
+				B96AF81825F4295D00B521EC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
