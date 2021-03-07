@@ -155,10 +155,18 @@
 		B96AF84A25F4366600B521EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B96AF87F25F59B1F00B521EC /* Pick Theme */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B96AF87F25F59B1F00B521EC /* Pick Theme */ = {
+			isa = PBXGroup;
+			children = (
 				B96AF81025F4295D00B521EC /* PickThemeViewController.h */,
 				B96AF81125F4295D00B521EC /* PickThemeViewController.m */,
 			);
-			path = Controllers;
+			path = "Pick Theme";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
