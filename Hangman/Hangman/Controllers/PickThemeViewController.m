@@ -20,8 +20,8 @@
     [self setUpStackViews];
 }
 
+//MARK: LABELS
 -(void) setUpTopLabels {
-    //MARK: LABELS
     // Welcome to Hangman Title Label
     self.welcomeToHangmanTitleLabel = [[UILabel alloc] init];
     self.welcomeToHangmanTitleLabel.text = @"Welcome to Hangman"; // Replace with NSLOCALIZED STRING LATER
@@ -39,8 +39,8 @@
     self.pickAThemeSubTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
+//MARK: HORIZONTAL STACK VIEW BUTTONS
 -(void) setUpHorizontalStackViewButtons {
-    //MARK: BUTTONS
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.moviesButton setTitle:@"MOVIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
@@ -96,8 +96,8 @@
     self.mixAllThemesButton.translatesAutoresizingMaskIntoConstraints = false;
 }
 
+//MARK: STACK VIEW AND CONSTAINTS TO SUPER VIEW
 -(void) setUpStackViews {
-    //MARK: STACK VIEWS
     // Horizontal Stack View 1
     UIStackView *horizontalStackView1 = [[UIStackView alloc] init];
     horizontalStackView1.axis = UILayoutConstraintAxisHorizontal;
@@ -141,12 +141,9 @@
     [mainstackView addArrangedSubview:horizontalStackView1];
     [mainstackView addArrangedSubview:horizontalStackView2];
     [mainstackView addArrangedSubview:horizontalStackView3];
-
     
-    [self.view addSubview:mainstackView];
-
-    //MARK: STACK VIEW AND CONSTAINTS TO SUPER VIEW
     //Constraining Main Stack View to superview
+    [self.view addSubview:mainstackView];
     [mainstackView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor].active = true;
     [mainstackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = true;
     [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
