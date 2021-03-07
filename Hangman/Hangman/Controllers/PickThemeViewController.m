@@ -149,6 +149,7 @@
     [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
     [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
 }
+
 //MARK: BUTTONS CLICK LISTENER
 
 -(void) clickThemesButton: (UIButton*) sender {
