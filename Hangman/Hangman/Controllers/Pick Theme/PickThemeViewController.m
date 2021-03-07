@@ -27,7 +27,7 @@
     self.welcomeToHangmanTitleLabel.text = @"Welcome to Hangman"; // Replace with NSLOCALIZED STRING LATER
     self.welcomeToHangmanTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.welcomeToHangmanTitleLabel.numberOfLines = 0;
-    self.welcomeToHangmanTitleLabel.font = [UIFont boldSystemFontOfSize:25.0];
+    self.welcomeToHangmanTitleLabel.font = [UIFont fontWithName:@"Marker Felt Wide" size:55.0];
     self.welcomeToHangmanTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
     
     // Pick a Theme Label
@@ -35,7 +35,7 @@
     self.pickAThemeSubTitleLabel.text = @"Pick a Theme"; // Replace with NSLOCALIZED STRING LATER
     self.pickAThemeSubTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.pickAThemeSubTitleLabel.numberOfLines = 0;
-    self.pickAThemeSubTitleLabel.font = [UIFont boldSystemFontOfSize:20.0];
+    self.pickAThemeSubTitleLabel.font = [UIFont fontWithName:@"Marker Felt Wide" size:25.0];
     self.pickAThemeSubTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
