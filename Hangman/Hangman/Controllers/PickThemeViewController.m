@@ -37,37 +37,37 @@
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.moviesButton setTitle:@"MOVIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.moviesButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.moviesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.moviesButton.translatesAutoresizingMaskIntoConstraints = false;
 
     // TV Shows Button
     self.tvShowsButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.tvShowsButton setTitle:@"TV SHOWS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.tvShowsButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.tvShowsButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.tvShowsButton.translatesAutoresizingMaskIntoConstraints = false;
     
     // Countries Button
     self.countriesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.countriesButton setTitle:@"COUNTRIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.countriesButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.countriesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.countriesButton.translatesAutoresizingMaskIntoConstraints = false;
 
     // Famous People Button
     self.famousPeopleButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.famousPeopleButton setTitle:@"FAMOUS PEOPLE" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.famousPeopleButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.famousPeopleButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.famousPeopleButton.translatesAutoresizingMaskIntoConstraints = false;
     
     // Words from Button
     self.wordsFromDictionaryButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.wordsFromDictionaryButton setTitle:@"DICTIONARY WORDS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.wordsFromDictionaryButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.wordsFromDictionaryButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.wordsFromDictionaryButton.translatesAutoresizingMaskIntoConstraints = false;
 
     // MIX ALL Button
     self.mixAllThemesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.mixAllThemesButton setTitle:@"MIX ALL" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
-    [self.mixAllThemesButton addTarget:self action:@selector(clickThemesButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.mixAllThemesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.mixAllThemesButton.translatesAutoresizingMaskIntoConstraints = false;
     
     // Horizontal Stack View 1
@@ -126,8 +126,8 @@
 
 }
 
--(void) clickThemesButton {
-    NSLog(@"Themes Button Clicked!!");
+-(void) clickThemesButton: (UIButton*) sender {
+    NSLog(@"Button Name: %@", sender.titleLabel.text);
 }
 
 @end
