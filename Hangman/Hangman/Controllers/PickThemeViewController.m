@@ -15,7 +15,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setUpTopLabels];
+    [self setUpHorizontalStackViewButtons];
+    [self setUpStackViews];
+}
+
+-(void) setUpTopLabels {
     //MARK: LABELS
     // Welcome to Hangman Title Label
     self.welcomeToHangmanTitleLabel = [[UILabel alloc] init];
@@ -32,8 +37,9 @@
     self.pickAThemeSubTitleLabel.numberOfLines = 0;
     self.pickAThemeSubTitleLabel.font = [UIFont boldSystemFontOfSize:20.0];
     self.pickAThemeSubTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
+}
 
-
+-(void) setUpHorizontalStackViewButtons {
     //MARK: BUTTONS
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -88,7 +94,9 @@
     self.mixAllThemesButton.layer.borderColor = UIColor.blackColor.CGColor;
     [self.mixAllThemesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.mixAllThemesButton.translatesAutoresizingMaskIntoConstraints = false;
-    
+}
+
+-(void) setUpStackViews {
     //MARK: STACK VIEWS
     // Horizontal Stack View 1
     UIStackView *horizontalStackView1 = [[UIStackView alloc] init];
@@ -143,9 +151,7 @@
     [mainstackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = true;
     [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
     [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
-
 }
-
 //MARK: BUTTONS CLICK LISTENER
 
 -(void) clickThemesButton: (UIButton*) sender {
