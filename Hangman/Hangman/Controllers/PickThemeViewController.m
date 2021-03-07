@@ -16,6 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //MARK: LABELS
     // Welcome to Hangman Title Label
     self.welcomeToHangmanTitleLabel = [[UILabel alloc] init];
     self.welcomeToHangmanTitleLabel.text = @"Welcome to Hangman"; // Replace with NSLOCALIZED STRING LATER
@@ -33,7 +34,7 @@
     self.pickAThemeSubTitleLabel.translatesAutoresizingMaskIntoConstraints = false;
 
 
-    
+    //MARK: BUTTONS
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.moviesButton setTitle:@"MOVIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
@@ -70,6 +71,7 @@
     [self.mixAllThemesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.mixAllThemesButton.translatesAutoresizingMaskIntoConstraints = false;
     
+    //MARK: STACK VIEWS
     // Horizontal Stack View 1
     UIStackView *horizontalStackView1 = [[UIStackView alloc] init];
     horizontalStackView1.axis = UILayoutConstraintAxisHorizontal;
@@ -117,7 +119,7 @@
     
     [self.view addSubview:mainstackView];
 
-
+    //MARK: STACK VIEW AND CONSTAINTS TO SUPER VIEW
     //Constraining Main Stack View to superview
     [mainstackView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor].active = true;
     [mainstackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = true;
@@ -126,8 +128,10 @@
 
 }
 
+//MARK: BUTTONS CLICK LISTENER
+
 -(void) clickThemesButton: (UIButton*) sender {
-    NSLog(@"Button Name: %@", sender.titleLabel.text);
+    NSLog(@"Button Clicked Name: %@", sender.titleLabel.text);
 }
 
 @end
