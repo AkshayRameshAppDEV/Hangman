@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80B25F4295D00B521EC /* AppDelegate.m */; };
 		B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80E25F4295D00B521EC /* SceneDelegate.m */; };
-		B96AF81225F4295D00B521EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF81125F4295D00B521EC /* ViewController.m */; };
+		B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF81125F4295D00B521EC /* PickThemeViewController.m */; };
 		B96AF81525F4295D00B521EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96AF81325F4295D00B521EC /* Main.storyboard */; };
 		B96AF81725F4295D00B521EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96AF81625F4295D00B521EC /* Assets.xcassets */; };
 		B96AF81A25F4295D00B521EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96AF81825F4295D00B521EC /* LaunchScreen.storyboard */; };
@@ -41,8 +41,8 @@
 		B96AF80B25F4295D00B521EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B96AF80D25F4295D00B521EC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		B96AF80E25F4295D00B521EC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		B96AF81025F4295D00B521EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B96AF81125F4295D00B521EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B96AF81025F4295D00B521EC /* PickThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickThemeViewController.h; sourceTree = "<group>"; };
+		B96AF81125F4295D00B521EC /* PickThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickThemeViewController.m; sourceTree = "<group>"; };
 		B96AF81425F4295D00B521EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B96AF81625F4295D00B521EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96AF81925F4295D00B521EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 		B96AF84A25F4366600B521EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B96AF81025F4295D00B521EC /* ViewController.h */,
-				B96AF81125F4295D00B521EC /* ViewController.m */,
+				B96AF81025F4295D00B521EC /* PickThemeViewController.h */,
+				B96AF81125F4295D00B521EC /* PickThemeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96AF81225F4295D00B521EC /* ViewController.m in Sources */,
+				B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */,
 				B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */,
 				B96AF81D25F4295D00B521EC /* main.m in Sources */,
 				B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */,

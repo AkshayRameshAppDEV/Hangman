@@ -5,13 +5,13 @@
 //  Created by Akshay Ramesh on 3/6/21.
 //
 
-#import "ViewController.h"
+#import "PickThemeViewController.h"
 
-@interface ViewController ()
+@interface PickThemeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation PickThemeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
