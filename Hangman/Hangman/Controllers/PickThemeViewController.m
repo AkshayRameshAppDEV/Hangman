@@ -76,7 +76,6 @@
     horizontalStackView1.alignment = UIStackViewAlignmentFill;
     horizontalStackView1.distribution = UIStackViewDistributionFillEqually;
     horizontalStackView1.spacing = 0;
-    horizontalStackView1.backgroundColor = UIColor.redColor;
     horizontalStackView1.translatesAutoresizingMaskIntoConstraints = false;
     [horizontalStackView1 addArrangedSubview:self.moviesButton];
     [horizontalStackView1 addArrangedSubview:self.tvShowsButton];
@@ -87,7 +86,6 @@
     horizontalStackView2.alignment = UIStackViewAlignmentFill;
     horizontalStackView2.distribution = UIStackViewDistributionFillEqually;
     horizontalStackView2.spacing = 0;
-    horizontalStackView2.backgroundColor = UIColor.redColor;
     horizontalStackView2.translatesAutoresizingMaskIntoConstraints = false;
     [horizontalStackView2 addArrangedSubview:self.countriesButton];
     [horizontalStackView2 addArrangedSubview:self.famousPeopleButton];
@@ -98,7 +96,6 @@
     horizontalStackView3.alignment = UIStackViewAlignmentFill;
     horizontalStackView3.distribution = UIStackViewDistributionFillEqually;
     horizontalStackView3.spacing = 0;
-    horizontalStackView3.backgroundColor = UIColor.redColor;
     horizontalStackView3.translatesAutoresizingMaskIntoConstraints = false;
     [horizontalStackView3 addArrangedSubview:self.wordsFromDictionaryButton];
     [horizontalStackView3 addArrangedSubview:self.mixAllThemesButton];
@@ -110,7 +107,6 @@
     mainstackView.alignment = UIStackViewAlignmentFill;
     mainstackView.distribution = UIStackViewDistributionFillEqually;
     mainstackView.spacing = 0;
-    mainstackView.backgroundColor = UIColor.yellowColor;
     mainstackView.translatesAutoresizingMaskIntoConstraints = false;
     [mainstackView addArrangedSubview:self.welcomeToHangmanTitleLabel];
     [mainstackView addArrangedSubview:self.pickAThemeSubTitleLabel];
