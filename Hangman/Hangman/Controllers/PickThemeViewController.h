@@ -9,6 +9,14 @@
 
 @interface PickThemeViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *welcomeToHangmanTitleLabel;
+@property (nonatomic, strong) UILabel *pickAThemeSubTitleLabel;
+@property (nonatomic, strong) UIButton *famousPeopleButton;
+@property (nonatomic, strong) UIButton *countriesButton;
+@property (nonatomic, strong) UIButton *moviesButton;
+@property (nonatomic, strong) UIButton *tvShowsButton;
+@property (nonatomic, strong) UIButton *wordsFromDictionaryButton;
+@property (nonatomic, strong) UIButton *mixAllThemesButton;
 
 @end
 
