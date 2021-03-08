@@ -180,7 +180,7 @@
             NSLog(@"Call MIX ALL API");
             break;
         default:
-            NSLog(@"WRONG BUTTON");
+            NSLog(@"INVALID BUTTON");
             break;
     }
 }
