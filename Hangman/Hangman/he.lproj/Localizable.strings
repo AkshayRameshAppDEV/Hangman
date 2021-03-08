@@ -5,3 +5,11 @@
   Created by Akshay Ramesh on 3/7/21.
   
 */
+"pick_theme_welcome_to_hangman_title_label" = "Welcome to Hangman";
+"pick_theme_sub_title_label" = "Pick a Theme";
+"pick_theme_movies_button_title" = "MOVIES";
+"pick_theme_tv_shows_button_title" = "TV SHOWS";
+"pick_theme_countries_button_title" = "COUNTRIES";
+"pick_theme_famous_people_button_title" = "FAMOUS PEOPLE";
+"pick_theme_dictionary_words_button_title" = "DICTIONARY WORDS";
+"pick_theme_mix_all_button_title" = "MIX ALL";
