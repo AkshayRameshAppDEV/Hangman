@@ -44,6 +44,7 @@
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.moviesButton setTitle:@"MOVIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.moviesButton.titleLabel.numberOfLines = 0;
     [self.moviesButton setTag:0];
     self.moviesButton.layer.borderWidth = 5.0;
     self.moviesButton.layer.borderColor = UIColor.blackColor.CGColor;
@@ -53,6 +54,7 @@
     // TV Shows Button
     self.tvShowsButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.tvShowsButton setTitle:@"TV SHOWS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.tvShowsButton.titleLabel.numberOfLines = 0;
     [self.tvShowsButton setTag:1];
     self.tvShowsButton.layer.borderWidth = 5.0;
     self.tvShowsButton.layer.borderColor = UIColor.blackColor.CGColor;
@@ -62,6 +64,7 @@
     // Countries Button
     self.countriesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.countriesButton setTitle:@"COUNTRIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.countriesButton.titleLabel.numberOfLines = 0;
     [self.countriesButton setTag:2];
     self.countriesButton.layer.borderWidth = 5.0;
     self.countriesButton.layer.borderColor = UIColor.blackColor.CGColor;
@@ -71,6 +74,7 @@
     // Famous People Button
     self.famousPeopleButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.famousPeopleButton setTitle:@"FAMOUS PEOPLE" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.famousPeopleButton.titleLabel.numberOfLines = 0;
     [self.famousPeopleButton setTag:3];
     self.famousPeopleButton.layer.borderWidth = 5.0;
     self.famousPeopleButton.layer.borderColor = UIColor.blackColor.CGColor;
@@ -80,6 +84,7 @@
     // Words from Button
     self.wordsFromDictionaryButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.wordsFromDictionaryButton setTitle:@"DICTIONARY WORDS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.wordsFromDictionaryButton.titleLabel.numberOfLines = 0;
     [self.wordsFromDictionaryButton setTag:4];
     self.wordsFromDictionaryButton.layer.borderWidth = 5.0;
     self.wordsFromDictionaryButton.layer.borderColor = UIColor.blackColor.CGColor;
@@ -89,6 +94,7 @@
     // MIX ALL Button
     self.mixAllThemesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.mixAllThemesButton setTitle:@"MIX ALL" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    self.mixAllThemesButton.titleLabel.numberOfLines = 0;
     [self.mixAllThemesButton setTag:5];
     self.mixAllThemesButton.layer.borderWidth = 5.0;
     self.mixAllThemesButton.layer.borderColor = UIColor.blackColor.CGColor;
