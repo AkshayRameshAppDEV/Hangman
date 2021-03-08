@@ -24,7 +24,7 @@
 -(void) setUpTopLabels {
     // Welcome to Hangman Title Label
     self.welcomeToHangmanTitleLabel = [[UILabel alloc] init];
-    self.welcomeToHangmanTitleLabel.text = @"Welcome to Hangman"; // Replace with NSLOCALIZED STRING LATER
+    self.welcomeToHangmanTitleLabel.text = NSLocalizedString(@"pick_theme_welcome_to_hangman_title_label", nil);
     self.welcomeToHangmanTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.welcomeToHangmanTitleLabel.numberOfLines = 0;
     self.welcomeToHangmanTitleLabel.font = [UIFont fontWithName:@"Marker Felt Wide" size:55.0];
@@ -32,7 +32,7 @@
     
     // Pick a Theme Label
     self.pickAThemeSubTitleLabel = [[UILabel alloc] init];
-    self.pickAThemeSubTitleLabel.text = @"Pick a Theme"; // Replace with NSLOCALIZED STRING LATER
+    self.pickAThemeSubTitleLabel.text = NSLocalizedString(@"pick_theme_sub_title_label", nil);
     self.pickAThemeSubTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.pickAThemeSubTitleLabel.numberOfLines = 0;
     self.pickAThemeSubTitleLabel.font = [UIFont fontWithName:@"Marker Felt Wide" size:25.0];
@@ -43,7 +43,7 @@
 -(void) setUpHorizontalStackViewButtons {
     // Movies Button
     self.moviesButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.moviesButton setTitle:@"MOVIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.moviesButton setTitle: NSLocalizedString(@"pick_theme_movies_button_title", nil) forState:UIControlStateNormal];
     self.moviesButton.titleLabel.numberOfLines = 0;
     [self.moviesButton setTag:0];
     self.moviesButton.layer.borderWidth = 5.0;
@@ -53,7 +53,7 @@
 
     // TV Shows Button
     self.tvShowsButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.tvShowsButton setTitle:@"TV SHOWS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.tvShowsButton setTitle: NSLocalizedString(@"pick_theme_tv_shows_button_title", nil) forState:UIControlStateNormal];
     self.tvShowsButton.titleLabel.numberOfLines = 0;
     [self.tvShowsButton setTag:1];
     self.tvShowsButton.layer.borderWidth = 5.0;
@@ -63,7 +63,7 @@
     
     // Countries Button
     self.countriesButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.countriesButton setTitle:@"COUNTRIES" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.countriesButton setTitle: NSLocalizedString(@"pick_theme_countries_button_title", nil) forState:UIControlStateNormal];
     self.countriesButton.titleLabel.numberOfLines = 0;
     [self.countriesButton setTag:2];
     self.countriesButton.layer.borderWidth = 5.0;
@@ -73,7 +73,7 @@
 
     // Famous People Button
     self.famousPeopleButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.famousPeopleButton setTitle:@"FAMOUS PEOPLE" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.famousPeopleButton setTitle: NSLocalizedString(@"pick_theme_famous_people_button_title", nil) forState:UIControlStateNormal];
     self.famousPeopleButton.titleLabel.numberOfLines = 0;
     [self.famousPeopleButton setTag:3];
     self.famousPeopleButton.layer.borderWidth = 5.0;
@@ -83,7 +83,7 @@
     
     // Words from Button
     self.wordsFromDictionaryButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.wordsFromDictionaryButton setTitle:@"DICTIONARY WORDS" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.wordsFromDictionaryButton setTitle: NSLocalizedString(@"pick_theme_dictionary_words_button_title", nil) forState:UIControlStateNormal];
     self.wordsFromDictionaryButton.titleLabel.numberOfLines = 0;
     [self.wordsFromDictionaryButton setTag:4];
     self.wordsFromDictionaryButton.layer.borderWidth = 5.0;
@@ -93,7 +93,7 @@
 
     // MIX ALL Button
     self.mixAllThemesButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.mixAllThemesButton setTitle:@"MIX ALL" forState:UIControlStateNormal]; // Replace with NSLOCALIZED STRING LATER
+    [self.mixAllThemesButton setTitle: NSLocalizedString(@"pick_theme_mix_all_button_title", nil) forState:UIControlStateNormal];
     self.mixAllThemesButton.titleLabel.numberOfLines = 0;
     [self.mixAllThemesButton setTag:5];
     self.mixAllThemesButton.layer.borderWidth = 5.0;
