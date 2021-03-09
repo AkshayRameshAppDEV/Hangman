@@ -1,0 +1,23 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "images" : [
+    {
+      "filename" : "BlueSkies~universal@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "BlueSkies~universal@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "3x",
+      "filename" : "BlueSkies~universal@3x.png",
+      "idiom" : "universal"
+    }
+  ]
+}
