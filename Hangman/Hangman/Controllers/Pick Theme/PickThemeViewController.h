@@ -18,5 +18,10 @@
 @property (nonatomic, strong) UIButton *wordsFromDictionaryButton;
 @property (nonatomic, strong) UIButton *mixAllThemesButton;
 
+-(void) setUpTopLabels;
+-(void) setUpHorizontalStackViewButtons;
+-(void) setUpStackViews;
+-(void) clickThemesButton: (UIButton*) sender;
+
 @end
 
