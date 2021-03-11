@@ -6,6 +6,7 @@
 //
 
 #import "PickThemeViewController.h"
+#import "GameViewController.h"
 
 @interface PickThemeViewController ()
 
@@ -183,6 +184,8 @@
             NSLog(@"INVALID BUTTON");
             break;
     }
+    GameViewController *gameVC = [[GameViewController alloc] init];
+    [self.navigationController pushViewController:gameVC animated:YES];
 }
 
 @end
