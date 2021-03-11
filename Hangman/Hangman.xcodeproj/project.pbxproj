@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B930655325F9E26400EFD56E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B930655225F9E26400EFD56E /* GameViewController.m */; };
 		B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80B25F4295D00B521EC /* AppDelegate.m */; };
 		B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80E25F4295D00B521EC /* SceneDelegate.m */; };
 		B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF81125F4295D00B521EC /* PickThemeViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B930655125F9E26400EFD56E /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		B930655225F9E26400EFD56E /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		B96AF80725F4295D00B521EC /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96AF80A25F4295D00B521EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96AF80B25F4295D00B521EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B930655025F9E0F300EFD56E /* Play Game */ = {
+			isa = PBXGroup;
+			children = (
+				B930655125F9E26400EFD56E /* GameViewController.h */,
+				B930655225F9E26400EFD56E /* GameViewController.m */,
+			);
+			path = "Play Game";
+			sourceTree = "<group>";
+		};
 		B96AF7FE25F4295D00B521EC = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 		B96AF84A25F4366600B521EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B930655025F9E0F300EFD56E /* Play Game */,
 				B96AF87F25F59B1F00B521EC /* Pick Theme */,
 			);
 			path = Controllers;
@@ -309,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B930655325F9E26400EFD56E /* GameViewController.m in Sources */,
 				B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */,
 				B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */,
 				B96AF81D25F4295D00B521EC /* main.m in Sources */,
