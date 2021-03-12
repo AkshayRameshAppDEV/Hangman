@@ -18,4 +18,9 @@
     self.view.backgroundColor = UIColor.redColor;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"Back button called!");
+}
+
 @end
