@@ -16,7 +16,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavbar];
+    [self setupLabels];
+    [self setupStackViews];
+}
+
+- (void)setupLabels {
     self.view.backgroundColor = UIColor.whiteColor;
+    
+    // Hangman Label
+    self.hangmanLabel = [[UILabel alloc] init];
+    self.hangmanLabel.text = NSLocalizedString(@"game_view_hangman_label", nil);
+    self.hangmanLabel.textAlignment = NSTextAlignmentCenter;
+    self.hangmanLabel.numberOfLines = 0;
+    self.hangmanLabel.font = [UIFont systemFontOfSize:30.0];
+    self.hangmanLabel.translatesAutoresizingMaskIntoConstraints = false;
+    
+    // Clues Label
+    self.clueLabel = [[UILabel alloc] init];
+    self.clueLabel.text = NSLocalizedString(@"game_view_clue_label", nil);
+    self.clueLabel.textAlignment = NSTextAlignmentCenter;
+    self.clueLabel.numberOfLines = 0;
+    self.clueLabel.font = [UIFont systemFontOfSize:30.0];
+    self.clueLabel.translatesAutoresizingMaskIntoConstraints = false;
+    
+    // Blanks Label
+    self.blanksLabel = [[UILabel alloc] init];
+    self.blanksLabel.text = NSLocalizedString(@"game_view_blanks_label", nil);
+    self.blanksLabel.textAlignment = NSTextAlignmentCenter;
+    self.blanksLabel.numberOfLines = 0;
+    self.blanksLabel.font = [UIFont systemFontOfSize:25.0];
+    self.blanksLabel.translatesAutoresizingMaskIntoConstraints = false;
+}
+
+- (void)setupStackViews {
+    
+    // Main Stack View
+    UIStackView *mainstackView = [[UIStackView alloc] init];
+    mainstackView.axis = UILayoutConstraintAxisVertical;
+    mainstackView.alignment = UIStackViewAlignmentFill;
+    mainstackView.distribution = UIStackViewDistributionFillEqually;
+    mainstackView.spacing = 0;
+    mainstackView.translatesAutoresizingMaskIntoConstraints = false;
+    [mainstackView addArrangedSubview:self.hangmanLabel];
+    [mainstackView addArrangedSubview:self.clueLabel];
+    [mainstackView addArrangedSubview:self.blanksLabel];
+    
+    //Constraining Main Stack View to superview
+    [self.view addSubview:mainstackView];
+    [mainstackView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor].active = true;
+    [mainstackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = true;
+    [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
+    [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
+    
 }
 
 - (void)setupNavbar {

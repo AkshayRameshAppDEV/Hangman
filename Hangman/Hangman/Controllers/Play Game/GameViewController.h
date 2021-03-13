@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) exitGame:(UIBarButtonItem *)sender;
 -(void) setupNavbar;
+-(void) setupLabels;
+-(void) setupStackViews;
 
 @end
 
