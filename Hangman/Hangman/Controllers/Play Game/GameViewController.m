@@ -17,7 +17,8 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(exitGame:)];
-        self.navigationItem.leftBarButtonItem = newBackButton;
+    self.navigationItem.leftBarButtonItem = newBackButton;
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 - (void) exitGame:(UIBarButtonItem *)sender {
