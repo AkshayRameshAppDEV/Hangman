@@ -50,6 +50,50 @@
 
 - (void)setupStackViews {
     
+
+    
+    
+    // Horizontal Stack View
+    UIStackView *horizontalstackView = [[UIStackView alloc] init];
+    horizontalstackView.axis = UILayoutConstraintAxisHorizontal;
+    horizontalstackView.alignment = UIStackViewAlignmentFill;
+    horizontalstackView.distribution = UIStackViewDistributionFillEqually;
+    horizontalstackView.spacing = 0;
+    horizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
+    for (int i = 0; i < 5; i++) {
+        // Horizontal Stack View
+        UIStackView *buttonVerticalStackView = [[UIStackView alloc] init];
+        buttonVerticalStackView.axis = UILayoutConstraintAxisVertical;
+        buttonVerticalStackView.alignment = UIStackViewAlignmentFill;
+        buttonVerticalStackView.distribution = UIStackViewDistributionFillEqually;
+        buttonVerticalStackView.spacing = 0;
+        buttonVerticalStackView.translatesAutoresizingMaskIntoConstraints = false;
+        for (int i = 0; i < 5; i++) {
+            UIButton *button1 = [[UIButton alloc] init];
+            button1 = [UIButton buttonWithType:UIButtonTypeSystem];
+            [button1 setTitle: NSLocalizedString(@"A", nil) forState:UIControlStateNormal];
+            button1.titleLabel.numberOfLines = 0;
+            button1.translatesAutoresizingMaskIntoConstraints = false;
+            [buttonVerticalStackView addArrangedSubview:button1];
+        }
+        [horizontalstackView addArrangedSubview:buttonVerticalStackView];
+
+    }
+    
+    UIStackView *buttonVerticalStackViewZ = [[UIStackView alloc] init];
+    buttonVerticalStackViewZ.axis = UILayoutConstraintAxisVertical;
+    buttonVerticalStackViewZ.alignment = UIStackViewAlignmentFill;
+    buttonVerticalStackViewZ.distribution = UIStackViewDistributionFillEqually;
+    buttonVerticalStackViewZ.spacing = 0;
+    buttonVerticalStackViewZ.translatesAutoresizingMaskIntoConstraints = false;
+    UIButton *buttonZ = [[UIButton alloc] init];
+    buttonZ = [UIButton buttonWithType:UIButtonTypeSystem];
+    [buttonZ setTitle: NSLocalizedString(@"Z", nil) forState:UIControlStateNormal];
+    buttonZ.titleLabel.numberOfLines = 0;
+    buttonZ.translatesAutoresizingMaskIntoConstraints = false;
+    [buttonVerticalStackViewZ addArrangedSubview:buttonZ];
+    [horizontalstackView addArrangedSubview:buttonVerticalStackViewZ];
+    
     // Main Stack View
     UIStackView *mainstackView = [[UIStackView alloc] init];
     mainstackView.axis = UILayoutConstraintAxisVertical;
@@ -60,6 +104,7 @@
     [mainstackView addArrangedSubview:self.hangmanLabel];
     [mainstackView addArrangedSubview:self.clueLabel];
     [mainstackView addArrangedSubview:self.blanksLabel];
+    [mainstackView addArrangedSubview:horizontalstackView];
     
     //Constraining Main Stack View to superview
     [self.view addSubview:mainstackView];
