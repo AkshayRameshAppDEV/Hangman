@@ -15,10 +15,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavbar];
+    self.view.backgroundColor = UIColor.whiteColor;
+}
+
+- (void)setupNavbar {
     self.navigationItem.hidesBackButton = YES;
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"game_view_nav_left_bar_button_item_title", nil) style:UIBarButtonItemStylePlain target:self action:@selector(exitGame:)];
     self.navigationItem.leftBarButtonItem = newBackButton;
-    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 - (void) exitGame:(UIBarButtonItem *)sender {

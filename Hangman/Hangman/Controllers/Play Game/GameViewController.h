@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GameViewController : UIViewController
 
-- (void) exitGame:(UIBarButtonItem *)sender;
+-(void) exitGame:(UIBarButtonItem *)sender;
+-(void) setupNavbar;
 
 @end
 
