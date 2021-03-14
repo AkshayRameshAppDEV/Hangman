@@ -7,7 +7,9 @@
 
 #import "GameViewController.h"
 
-@interface GameViewController ()
+@interface GameViewController () {
+    NSArray *alphabets;
+}
 
 @end
 
@@ -15,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    alphabets = @[@[@"A", @"B", @"C", @"D", @"E"], @[@"F", @"G", @"H", @"I", @"J"], @[@"K", @"L", @"M", @"N", @"O"], @[@"P", @"Q", @"R", @"S", @"T"], @[@"U", @"V", @"W", @"X", @"Y"], @"Z"];
     [self setupNavbar];
     [self setupLabels];
     [self setupStackViews];
@@ -50,9 +53,6 @@
 
 - (void)setupStackViews {
     
-
-    
-    
     // Horizontal Stack View
     UIStackView *horizontalstackView = [[UIStackView alloc] init];
     horizontalstackView.axis = UILayoutConstraintAxisHorizontal;
@@ -68,10 +68,11 @@
         buttonVerticalStackView.distribution = UIStackViewDistributionFillEqually;
         buttonVerticalStackView.spacing = 0;
         buttonVerticalStackView.translatesAutoresizingMaskIntoConstraints = false;
-        for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
             UIButton *button1 = [[UIButton alloc] init];
             button1 = [UIButton buttonWithType:UIButtonTypeSystem];
-            [button1 setTitle: NSLocalizedString(@"A", nil) forState:UIControlStateNormal];
+            NSArray *tempAlphaArray = [alphabets objectAtIndex:i];
+            [button1 setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
             button1.titleLabel.numberOfLines = 0;
             button1.translatesAutoresizingMaskIntoConstraints = false;
             [buttonVerticalStackView addArrangedSubview:button1];
@@ -88,7 +89,7 @@
     buttonVerticalStackViewZ.translatesAutoresizingMaskIntoConstraints = false;
     UIButton *buttonZ = [[UIButton alloc] init];
     buttonZ = [UIButton buttonWithType:UIButtonTypeSystem];
-    [buttonZ setTitle: NSLocalizedString(@"Z", nil) forState:UIControlStateNormal];
+    [buttonZ setTitle: NSLocalizedString([alphabets lastObject], nil) forState:UIControlStateNormal];
     buttonZ.titleLabel.numberOfLines = 0;
     buttonZ.translatesAutoresizingMaskIntoConstraints = false;
     [buttonVerticalStackViewZ addArrangedSubview:buttonZ];
