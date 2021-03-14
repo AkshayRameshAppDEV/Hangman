@@ -62,22 +62,22 @@
     horizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
     for (int i = 0; i < 5; i++) {
         // Horizontal Stack View
-        UIStackView *buttonVerticalStackView = [[UIStackView alloc] init];
-        buttonVerticalStackView.axis = UILayoutConstraintAxisVertical;
-        buttonVerticalStackView.alignment = UIStackViewAlignmentFill;
-        buttonVerticalStackView.distribution = UIStackViewDistributionFillEqually;
-        buttonVerticalStackView.spacing = 0;
-        buttonVerticalStackView.translatesAutoresizingMaskIntoConstraints = false;
+        UIStackView *buttonVerticalStackViewAToY = [[UIStackView alloc] init];
+        buttonVerticalStackViewAToY.axis = UILayoutConstraintAxisVertical;
+        buttonVerticalStackViewAToY.alignment = UIStackViewAlignmentFill;
+        buttonVerticalStackViewAToY.distribution = UIStackViewDistributionFillEqually;
+        buttonVerticalStackViewAToY.spacing = 0;
+        buttonVerticalStackViewAToY.translatesAutoresizingMaskIntoConstraints = false;
         for (int j = 0; j < 5; j++) {
-            UIButton *button1 = [[UIButton alloc] init];
-            button1 = [UIButton buttonWithType:UIButtonTypeSystem];
+            UIButton *alphaButton = [[UIButton alloc] init];
+            alphaButton = [UIButton buttonWithType:UIButtonTypeSystem];
             NSArray *tempAlphaArray = [alphabets objectAtIndex:i];
-            [button1 setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
-            button1.titleLabel.numberOfLines = 0;
-            button1.translatesAutoresizingMaskIntoConstraints = false;
-            [buttonVerticalStackView addArrangedSubview:button1];
+            [alphaButton setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
+            alphaButton.titleLabel.numberOfLines = 0;
+            alphaButton.translatesAutoresizingMaskIntoConstraints = false;
+            [buttonVerticalStackViewAToY addArrangedSubview:alphaButton];
         }
-        [horizontalstackView addArrangedSubview:buttonVerticalStackView];
+        [horizontalstackView addArrangedSubview:buttonVerticalStackViewAToY];
 
     }
     
