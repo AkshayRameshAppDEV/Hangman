@@ -67,7 +67,7 @@
     horizontalstackView.spacing = 0;
     horizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
     for (int i = 0; i < 5; i++) {
-        // Horizontal Stack View
+        // Vertical Stack view of buttons
         UIStackView *buttonVerticalStackViewAToY = [[UIStackView alloc] init];
         buttonVerticalStackViewAToY.axis = UILayoutConstraintAxisVertical;
         buttonVerticalStackViewAToY.alignment = UIStackViewAlignmentFill;
@@ -86,7 +86,7 @@
         [horizontalstackView addArrangedSubview:buttonVerticalStackViewAToY];
 
     }
-    
+    // Vertical stack view Z button
     UIStackView *buttonVerticalStackViewZ = [[UIStackView alloc] init];
     buttonVerticalStackViewZ.axis = UILayoutConstraintAxisVertical;
     buttonVerticalStackViewZ.alignment = UIStackViewAlignmentFill;
