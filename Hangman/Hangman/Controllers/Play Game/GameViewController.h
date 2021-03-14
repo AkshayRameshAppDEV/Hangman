@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) setupNavbar;
 -(void) setupLabels;
 -(void) setupStackViews;
+-(void) alphabetPressed: (UIButton*) sender;
 
 @end
 

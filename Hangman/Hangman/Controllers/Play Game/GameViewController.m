@@ -81,6 +81,7 @@
             [alphaButton setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
             alphaButton.titleLabel.numberOfLines = 0;
             [alphaButton.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0]];
+            [alphaButton addTarget:self action:@selector(alphabetPressed:) forControlEvents:UIControlEventTouchUpInside];
             alphaButton.translatesAutoresizingMaskIntoConstraints = false;
             [buttonVerticalStackViewAToY addArrangedSubview:alphaButton];
         }
@@ -99,6 +100,7 @@
     [buttonZ setTitle: NSLocalizedString([alphabets lastObject], nil) forState:UIControlStateNormal];
     buttonZ.titleLabel.numberOfLines = 0;
     [buttonZ.titleLabel setFont:[UIFont boldSystemFontOfSize:50.0]];
+    [buttonZ addTarget:self action:@selector(alphabetPressed:) forControlEvents:UIControlEventTouchUpInside];
     buttonZ.translatesAutoresizingMaskIntoConstraints = false;
     [buttonVerticalStackViewZ addArrangedSubview:buttonZ];
     [horizontalstackView addArrangedSubview:buttonVerticalStackViewZ];
@@ -122,6 +124,10 @@
     [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
     [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
     
+}
+
+-(void) alphabetPressed: (UIButton*) sender {
+    NSLog(@"Button Clicked Name: %@", sender.titleLabel.text);
 }
 
 - (void)setupNavbar {
