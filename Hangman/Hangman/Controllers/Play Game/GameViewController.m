@@ -80,12 +80,13 @@
             NSArray *tempAlphaArray = [alphabets objectAtIndex:i];
             [alphaButton setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
             alphaButton.titleLabel.numberOfLines = 0;
+            [alphaButton.titleLabel setFont:[UIFont boldSystemFontOfSize:25.0]];
             alphaButton.translatesAutoresizingMaskIntoConstraints = false;
             [buttonVerticalStackViewAToY addArrangedSubview:alphaButton];
         }
         [horizontalstackView addArrangedSubview:buttonVerticalStackViewAToY];
-
     }
+    
     // Vertical stack view Z button
     UIStackView *buttonVerticalStackViewZ = [[UIStackView alloc] init];
     buttonVerticalStackViewZ.axis = UILayoutConstraintAxisVertical;
@@ -97,6 +98,7 @@
     buttonZ = [UIButton buttonWithType:UIButtonTypeSystem];
     [buttonZ setTitle: NSLocalizedString([alphabets lastObject], nil) forState:UIControlStateNormal];
     buttonZ.titleLabel.numberOfLines = 0;
+    [buttonZ.titleLabel setFont:[UIFont boldSystemFontOfSize:50.0]];
     buttonZ.translatesAutoresizingMaskIntoConstraints = false;
     [buttonVerticalStackViewZ addArrangedSubview:buttonZ];
     [horizontalstackView addArrangedSubview:buttonVerticalStackViewZ];
