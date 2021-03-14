@@ -80,7 +80,7 @@
             NSArray *tempAlphaArray = [alphabets objectAtIndex:i];
             [alphaButton setTitle: NSLocalizedString([tempAlphaArray objectAtIndex:j], nil) forState:UIControlStateNormal];
             alphaButton.titleLabel.numberOfLines = 0;
-            [alphaButton.titleLabel setFont:[UIFont boldSystemFontOfSize:25.0]];
+            [alphaButton.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0]];
             alphaButton.translatesAutoresizingMaskIntoConstraints = false;
             [buttonVerticalStackViewAToY addArrangedSubview:alphaButton];
         }
