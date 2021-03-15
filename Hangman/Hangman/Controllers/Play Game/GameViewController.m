@@ -47,14 +47,6 @@
     self.clueLabel.numberOfLines = 0;
     self.clueLabel.font = [UIFont systemFontOfSize:30.0];
     self.clueLabel.translatesAutoresizingMaskIntoConstraints = false;
-    
-    // Blanks Label
-    self.blanksLabel = [[UILabel alloc] init];
-    self.blanksLabel.text = NSLocalizedString(@"", nil);
-    self.blanksLabel.textAlignment = NSTextAlignmentCenter;
-    self.blanksLabel.numberOfLines = 0;
-    self.blanksLabel.font = [UIFont systemFontOfSize:25.0];
-    self.blanksLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
 - (void)setupStackViews {
