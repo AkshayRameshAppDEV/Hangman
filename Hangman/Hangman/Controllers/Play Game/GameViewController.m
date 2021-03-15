@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.whiteColor;
     alphabets = @[@[@"A", @"B", @"C", @"D", @"E"],
                   @[@"F", @"G", @"H", @"I", @"J"],
                   @[@"K", @"L", @"M", @"N", @"O"],
@@ -30,7 +31,6 @@
 }
 
 - (void)setupLabels {
-    self.view.backgroundColor = UIColor.whiteColor;
     
     // Hangman Label
     self.hangmanLabel = [[UILabel alloc] init];
