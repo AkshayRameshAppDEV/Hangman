@@ -59,6 +59,23 @@
 
 - (void)setupStackViews {
     
+    // Clue Horizontal stack view of buttons
+    UIStackView *blanksHorizontalstackView = [[UIStackView alloc] init];
+    blanksHorizontalstackView.axis = UILayoutConstraintAxisHorizontal;
+    blanksHorizontalstackView.alignment = UIStackViewAlignmentFill;
+    blanksHorizontalstackView.distribution = UIStackViewDistributionFillEqually;
+    blanksHorizontalstackView.spacing = 0;
+    blanksHorizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
+    for (int j = 0; j < 5; j++) {
+        UIButton *blankButton = [[UIButton alloc] init];
+        blankButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [blankButton setTitle: NSLocalizedString(@"_", nil) forState:UIControlStateNormal];
+        blankButton.titleLabel.numberOfLines = 0;
+        [blankButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
+        blankButton.translatesAutoresizingMaskIntoConstraints = false;
+        [blanksHorizontalstackView addArrangedSubview:blankButton];
+    }
+    
     // Horizontal Stack View
     UIStackView *horizontalstackView = [[UIStackView alloc] init];
     horizontalstackView.axis = UILayoutConstraintAxisHorizontal;
@@ -114,7 +131,7 @@
     mainstackView.translatesAutoresizingMaskIntoConstraints = false;
     [mainstackView addArrangedSubview:self.hangmanLabel];
     [mainstackView addArrangedSubview:self.clueLabel];
-    [mainstackView addArrangedSubview:self.blanksLabel];
+    [mainstackView addArrangedSubview:blanksHorizontalstackView];
     [mainstackView addArrangedSubview:horizontalstackView];
     
     //Constraining Main Stack View to superview
