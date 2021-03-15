@@ -50,7 +50,7 @@
     
     // Blanks Label
     self.blanksLabel = [[UILabel alloc] init];
-    self.blanksLabel.text = NSLocalizedString(@"game_view_blanks_label", nil);
+    self.blanksLabel.text = NSLocalizedString(@"", nil);
     self.blanksLabel.textAlignment = NSTextAlignmentCenter;
     self.blanksLabel.numberOfLines = 0;
     self.blanksLabel.font = [UIFont systemFontOfSize:25.0];
