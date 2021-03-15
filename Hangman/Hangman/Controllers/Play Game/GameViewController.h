@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) setupLabels;
 -(void) setupStackViews;
 -(void) alphabetPressed: (UIButton*) sender;
+-(UIStackView*) setupBlankHorizontalStackView;
+-(UIStackView*) setupHorizontalStackViewOfAToZButtons;
 
 @end
 

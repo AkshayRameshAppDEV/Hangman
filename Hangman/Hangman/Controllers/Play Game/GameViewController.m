@@ -49,15 +49,16 @@
     self.clueLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
-- (void)setupStackViews {
-    
-    // Clue Horizontal stack view of buttons
-    UIStackView *blanksHorizontalstackView = [[UIStackView alloc] init];
-    blanksHorizontalstackView.axis = UILayoutConstraintAxisHorizontal;
-    blanksHorizontalstackView.alignment = UIStackViewAlignmentFill;
-    blanksHorizontalstackView.distribution = UIStackViewDistributionFillEqually;
-    blanksHorizontalstackView.spacing = 0;
-    blanksHorizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
+// TODO: Make blanks stackview of button non editable and change font color to black
+
+-(UIStackView*) setupBlankHorizontalStackView {
+    // Horizontal stack view of Blanks buttons
+    UIStackView *blanksHorizontalStackView = [[UIStackView alloc] init];
+    blanksHorizontalStackView.axis = UILayoutConstraintAxisHorizontal;
+    blanksHorizontalStackView.alignment = UIStackViewAlignmentFill;
+    blanksHorizontalStackView.distribution = UIStackViewDistributionFillEqually;
+    blanksHorizontalStackView.spacing = 0;
+    blanksHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false;
     for (int j = 0; j < 5; j++) {
         UIButton *blankButton = [[UIButton alloc] init];
         blankButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -65,9 +66,12 @@
         blankButton.titleLabel.numberOfLines = 0;
         [blankButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
         blankButton.translatesAutoresizingMaskIntoConstraints = false;
-        [blanksHorizontalstackView addArrangedSubview:blankButton];
+        [blanksHorizontalStackView addArrangedSubview:blankButton];
     }
-    
+    return blanksHorizontalStackView;
+}
+
+-(UIStackView*) setupHorizontalStackViewOfAToZButtons {
     // Horizontal Stack View
     UIStackView *horizontalstackView = [[UIStackView alloc] init];
     horizontalstackView.axis = UILayoutConstraintAxisHorizontal;
@@ -76,7 +80,7 @@
     horizontalstackView.spacing = 0;
     horizontalstackView.translatesAutoresizingMaskIntoConstraints = false;
     for (int i = 0; i < 5; i++) {
-        // Vertical Stack view of buttons
+        // Vertical Stack view of A-Y buttons
         UIStackView *buttonVerticalStackViewAToY = [[UIStackView alloc] init];
         buttonVerticalStackViewAToY.axis = UILayoutConstraintAxisVertical;
         buttonVerticalStackViewAToY.alignment = UIStackViewAlignmentFill;
@@ -114,6 +118,14 @@
     [buttonVerticalStackViewZ addArrangedSubview:buttonZ];
     [horizontalstackView addArrangedSubview:buttonVerticalStackViewZ];
     
+    return horizontalstackView;
+}
+
+
+- (void)setupStackViews {
+    UIStackView *blanksHorizontalStackView = [self setupBlankHorizontalStackView];
+    UIStackView *HorizontalStackViewOfAtoZButtons = [self setupHorizontalStackViewOfAToZButtons];
+    
     // Main Stack View
     UIStackView *mainstackView = [[UIStackView alloc] init];
     mainstackView.axis = UILayoutConstraintAxisVertical;
@@ -123,8 +135,8 @@
     mainstackView.translatesAutoresizingMaskIntoConstraints = false;
     [mainstackView addArrangedSubview:self.hangmanLabel];
     [mainstackView addArrangedSubview:self.clueLabel];
-    [mainstackView addArrangedSubview:blanksHorizontalstackView];
-    [mainstackView addArrangedSubview:horizontalstackView];
+    [mainstackView addArrangedSubview:blanksHorizontalStackView];
+    [mainstackView addArrangedSubview:HorizontalStackViewOfAtoZButtons];
     
     //Constraining Main Stack View to superview
     [self.view addSubview:mainstackView];
@@ -132,7 +144,6 @@
     [mainstackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = true;
     [mainstackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = true;
     [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
-    
 }
 
 -(void) alphabetPressed: (UIButton*) sender {
