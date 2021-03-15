@@ -49,8 +49,6 @@
     self.clueLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
-// TODO: Make blanks stackview of button non editable and change font color to black
-
 -(UIStackView*) setupBlankHorizontalStackView {
     // Horizontal stack view of Blanks buttons
     UIStackView *blanksHorizontalStackView = [[UIStackView alloc] init];
@@ -65,6 +63,8 @@
         [blankButton setTitle: NSLocalizedString(@"_", nil) forState:UIControlStateNormal];
         blankButton.titleLabel.numberOfLines = 0;
         [blankButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
+        [blankButton setUserInteractionEnabled:NO];
+        [blankButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
         blankButton.translatesAutoresizingMaskIntoConstraints = false;
         [blanksHorizontalStackView addArrangedSubview:blankButton];
     }
