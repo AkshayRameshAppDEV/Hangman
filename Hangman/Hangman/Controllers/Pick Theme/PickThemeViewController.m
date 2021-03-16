@@ -48,7 +48,7 @@
     self.moviesButton.titleLabel.numberOfLines = 0;
     [self.moviesButton setTag:0];
     self.moviesButton.layer.borderWidth = 5.0;
-    self.moviesButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.moviesButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.moviesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.moviesButton.translatesAutoresizingMaskIntoConstraints = false;
 
@@ -58,7 +58,7 @@
     self.tvShowsButton.titleLabel.numberOfLines = 0;
     [self.tvShowsButton setTag:1];
     self.tvShowsButton.layer.borderWidth = 5.0;
-    self.tvShowsButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.tvShowsButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.tvShowsButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.tvShowsButton.translatesAutoresizingMaskIntoConstraints = false;
     
@@ -68,7 +68,7 @@
     self.countriesButton.titleLabel.numberOfLines = 0;
     [self.countriesButton setTag:2];
     self.countriesButton.layer.borderWidth = 5.0;
-    self.countriesButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.countriesButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.countriesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.countriesButton.translatesAutoresizingMaskIntoConstraints = false;
 
@@ -78,7 +78,7 @@
     self.famousPeopleButton.titleLabel.numberOfLines = 0;
     [self.famousPeopleButton setTag:3];
     self.famousPeopleButton.layer.borderWidth = 5.0;
-    self.famousPeopleButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.famousPeopleButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.famousPeopleButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.famousPeopleButton.translatesAutoresizingMaskIntoConstraints = false;
     
@@ -88,7 +88,7 @@
     self.wordsFromDictionaryButton.titleLabel.numberOfLines = 0;
     [self.wordsFromDictionaryButton setTag:4];
     self.wordsFromDictionaryButton.layer.borderWidth = 5.0;
-    self.wordsFromDictionaryButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.wordsFromDictionaryButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.wordsFromDictionaryButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.wordsFromDictionaryButton.translatesAutoresizingMaskIntoConstraints = false;
 
@@ -98,7 +98,7 @@
     self.mixAllThemesButton.titleLabel.numberOfLines = 0;
     [self.mixAllThemesButton setTag:5];
     self.mixAllThemesButton.layer.borderWidth = 5.0;
-    self.mixAllThemesButton.layer.borderColor = UIColor.blackColor.CGColor;
+    self.mixAllThemesButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.mixAllThemesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.mixAllThemesButton.translatesAutoresizingMaskIntoConstraints = false;
 }

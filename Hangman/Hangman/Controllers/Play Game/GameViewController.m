@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.systemBackgroundColor;
     alphabets = @[@[@"A", @"B", @"C", @"D", @"E"],
                   @[@"F", @"G", @"H", @"I", @"J"],
                   @[@"K", @"L", @"M", @"N", @"O"],
