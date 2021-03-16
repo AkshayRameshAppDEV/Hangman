@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B930655325F9E26400EFD56E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B930655225F9E26400EFD56E /* GameViewController.m */; };
+		B930656C2600793800EFD56E /* HangmanBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = B930656B2600793800EFD56E /* HangmanBrain.m */; };
 		B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80B25F4295D00B521EC /* AppDelegate.m */; };
 		B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF80E25F4295D00B521EC /* SceneDelegate.m */; };
 		B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF81125F4295D00B521EC /* PickThemeViewController.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		B930655125F9E26400EFD56E /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		B930655225F9E26400EFD56E /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		B930656A2600793800EFD56E /* HangmanBrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HangmanBrain.h; sourceTree = "<group>"; };
+		B930656B2600793800EFD56E /* HangmanBrain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HangmanBrain.m; sourceTree = "<group>"; };
 		B96AF80725F4295D00B521EC /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96AF80A25F4295D00B521EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96AF80B25F4295D00B521EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 			path = "Play Game";
 			sourceTree = "<group>";
 		};
+		B9306569260078F800EFD56E /* Brain */ = {
+			isa = PBXGroup;
+			children = (
+				B930656A2600793800EFD56E /* HangmanBrain.h */,
+				B930656B2600793800EFD56E /* HangmanBrain.m */,
+			);
+			path = Brain;
+			sourceTree = "<group>";
+		};
 		B96AF7FE25F4295D00B521EC = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 		B96AF80925F4295D00B521EC /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				B9306569260078F800EFD56E /* Brain */,
 				B96AF84225F4358900B521EC /* Main App Delegates */,
 				B96AF84A25F4366600B521EC /* Controllers */,
 				B96AF84625F435C200B521EC /* Storyboards */,
@@ -323,6 +336,7 @@
 				B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */,
 				B96AF81D25F4295D00B521EC /* main.m in Sources */,
 				B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */,
+				B930656C2600793800EFD56E /* HangmanBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
