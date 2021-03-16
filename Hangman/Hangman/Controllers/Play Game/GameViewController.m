@@ -64,7 +64,7 @@
         blankButton.titleLabel.numberOfLines = 0;
         [blankButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
         [blankButton setUserInteractionEnabled:NO];
-        [blankButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+        [blankButton setTitleColor:UIColor.systemGrayColor forState:UIControlStateNormal];
         blankButton.translatesAutoresizingMaskIntoConstraints = false;
         [blanksHorizontalStackView addArrangedSubview:blankButton];
     }
