@@ -170,7 +170,7 @@
     }
 }
 
--(unsigned long) getLetterLocation: (NSString*) alphabet {
+-(NSUInteger) getLetterLocation: (NSString*) alphabet {
     NSString *word = @"RAND";
     return [word rangeOfString:alphabet].location;
 }
