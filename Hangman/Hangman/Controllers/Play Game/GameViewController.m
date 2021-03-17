@@ -51,12 +51,7 @@
 
 -(UIStackView*) setupBlankHorizontalStackView {
     // Horizontal stack view of Blanks buttons
-    UIStackView *blanksHorizontalStackView = [[UIStackView alloc] init];
-    blanksHorizontalStackView.axis = UILayoutConstraintAxisHorizontal;
-    blanksHorizontalStackView.alignment = UIStackViewAlignmentFill;
-    blanksHorizontalStackView.distribution = UIStackViewDistributionFillEqually;
-    blanksHorizontalStackView.spacing = 0;
-    blanksHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false;
+    NSMutableArray *blankButtonArray = [[NSMutableArray alloc] init];
     for (int j = 0; j < 5; j++) {
         UIButton *blankButton = [[UIButton alloc] init];
         blankButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -66,8 +61,16 @@
         [blankButton setUserInteractionEnabled:NO];
         [blankButton setTitleColor:UIColor.systemGrayColor forState:UIControlStateNormal];
         blankButton.translatesAutoresizingMaskIntoConstraints = false;
-        [blanksHorizontalStackView addArrangedSubview:blankButton];
+        [blankButtonArray addObject:blankButton];
     }
+    
+    UIStackView *blanksHorizontalStackView = [[UIStackView alloc] initWithArrangedSubviews:blankButtonArray];
+    blanksHorizontalStackView.axis = UILayoutConstraintAxisHorizontal;
+    blanksHorizontalStackView.alignment = UIStackViewAlignmentFill;
+    blanksHorizontalStackView.distribution = UIStackViewDistributionFillEqually;
+    blanksHorizontalStackView.spacing = 0;
+    [blanksHorizontalStackView setTag:100];
+    blanksHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false;
     return blanksHorizontalStackView;
 }
 
@@ -147,7 +150,22 @@
 }
 
 -(void) alphabetPressed: (UIButton*) sender {
-    NSLog(@"Button Clicked Name: %@", sender.titleLabel.text);
+    for (UIView *mainSubView in self.view.subviews){
+        if([mainSubView isKindOfClass:[UIStackView class]]){
+            for (UIView *subViewsInStackView in mainSubView.subviews){
+                if([subViewsInStackView isKindOfClass:[UIStackView class]]){
+                    if(subViewsInStackView.tag == 100){
+                        for (UIView *blanksButtonsView in subViewsInStackView.subviews){
+                            if([blanksButtonsView isKindOfClass:[UIButton class]]){
+                                UIButton *blankButton = (UIButton *)blanksButtonsView;
+                                [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (void)setupNavbar {
