@@ -150,22 +150,29 @@
 }
 
 -(void) alphabetPressed: (UIButton*) sender {
+    int alphabetLocationStopper = 0;
     for (UIView *mainSubView in self.view.subviews){
         if([mainSubView isKindOfClass:[UIStackView class]]){
             for (UIView *subViewsInStackView in mainSubView.subviews){
                 if([subViewsInStackView isKindOfClass:[UIStackView class]]){
                     if(subViewsInStackView.tag == 100){
                         for (UIView *blanksButtonsView in subViewsInStackView.subviews){
-                            if([blanksButtonsView isKindOfClass:[UIButton class]]){
+                            if([blanksButtonsView isKindOfClass:[UIButton class]] && alphabetLocationStopper == [self getLetterLocation:sender.titleLabel.text]){
                                 UIButton *blankButton = (UIButton *)blanksButtonsView;
                                 [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
                             }
+                            alphabetLocationStopper++;
                         }
                     }
                 }
             }
         }
     }
+}
+
+-(unsigned long) getLetterLocation: (NSString*) alphabet {
+    NSString *word = @"RAND";
+    return [word rangeOfString:alphabet].location;
 }
 
 - (void)setupNavbar {
