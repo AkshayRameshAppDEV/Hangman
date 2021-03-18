@@ -157,7 +157,7 @@
                 if([subViewsInStackView isKindOfClass:[UIStackView class]]){
                     if(subViewsInStackView.tag == 100){
                         for (UIView *blanksButtonsView in subViewsInStackView.subviews){
-                            if([blanksButtonsView isKindOfClass:[UIButton class]] && alphabetLocationStopper == [self getLetterLocation:sender.titleLabel.text]){
+                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self getLetterLocation:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
                                 UIButton *blankButton = (UIButton *)blanksButtonsView;
                                 [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
                             }
@@ -170,9 +170,27 @@
     }
 }
 
--(NSUInteger) getLetterLocation: (NSString*) alphabet {
-    NSString *word = @"RAND";
-    return [word rangeOfString:alphabet].location;
+-(NSMutableArray*) getLetterLocation: (NSString*) alphabet {
+    NSString *word = @"HELLO";
+    NSMutableArray *letterLocationArray = [[NSMutableArray alloc] init];
+    NSArray *results = [self rangesOfString:alphabet inString:word];
+    for (int i=0; i<results.count; i++) {
+        NSValue *value = (NSValue *)results[i];
+        NSRange range = [value rangeValue];
+        [letterLocationArray addObject:[NSNumber numberWithInteger:range.location]];
+    }
+    return letterLocationArray;
+}
+
+- (NSArray *)rangesOfString:(NSString *)searchString inString:(NSString *)str {
+    NSMutableArray *results = [NSMutableArray array];
+    NSRange searchRange = NSMakeRange(0, [str length]);
+    NSRange range;
+    while ((range = [str rangeOfString:searchString options:0 range:searchRange]).location != NSNotFound) {
+        [results addObject:[NSValue valueWithRange:range]];
+        searchRange = NSMakeRange(NSMaxRange(range), [str length] - NSMaxRange(range));
+    }
+    return results;
 }
 
 - (void)setupNavbar {
