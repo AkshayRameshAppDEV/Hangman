@@ -157,7 +157,7 @@
                 if([subViewsInStackView isKindOfClass:[UIStackView class]]){
                     if(subViewsInStackView.tag == 100){
                         for (UIView *blanksButtonsView in subViewsInStackView.subviews){
-                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self getLetterLocation:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
+                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self getLetterLocations:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
                                 UIButton *blankButton = (UIButton *)blanksButtonsView;
                                 [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
                             }
@@ -170,7 +170,7 @@
     }
 }
 
--(NSMutableArray*) getLetterLocation: (NSString*) alphabet {
+-(NSMutableArray*) getLetterLocations: (NSString*) alphabet {
     NSString *word = @"HELLO";
     NSMutableArray *letterLocationArray = [[NSMutableArray alloc] init];
     NSArray *results = [self rangesOfString:alphabet inString:word];
