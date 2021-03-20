@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.systemBackgroundColor;
+    self.hangmanBrain = [[HangmanBrain alloc] init];
     alphabets = @[@[@"A", @"B", @"C", @"D", @"E"],
                   @[@"F", @"G", @"H", @"I", @"J"],
                   @[@"K", @"L", @"M", @"N", @"O"],
@@ -157,7 +158,7 @@
                 if([subViewsInStackView isKindOfClass:[UIStackView class]]){
                     if(subViewsInStackView.tag == 100){
                         for (UIView *blanksButtonsView in subViewsInStackView.subviews){
-                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self getLetterLocations:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
+                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self.hangmanBrain getLetterLocations:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
                                 UIButton *blankButton = (UIButton *)blanksButtonsView;
                                 [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
                             }
@@ -168,29 +169,6 @@
             }
         }
     }
-}
-
--(NSMutableArray*) getLetterLocations: (NSString*) alphabet {
-    NSString *word = @"HELLO";
-    NSMutableArray *letterLocationArray = [[NSMutableArray alloc] init];
-    NSArray *results = [self rangesOfString:alphabet inString:word];
-    for (int i=0; i<results.count; i++) {
-        NSValue *value = (NSValue *)results[i];
-        NSRange range = [value rangeValue];
-        [letterLocationArray addObject:[NSNumber numberWithInteger:range.location]];
-    }
-    return letterLocationArray;
-}
-
-- (NSArray *)rangesOfString:(NSString *)searchString inString:(NSString *)str {
-    NSMutableArray *results = [NSMutableArray array];
-    NSRange searchRange = NSMakeRange(0, [str length]);
-    NSRange range;
-    while ((range = [str rangeOfString:searchString options:0 range:searchRange]).location != NSNotFound) {
-        [results addObject:[NSValue valueWithRange:range]];
-        searchRange = NSMakeRange(NSMaxRange(range), [str length] - NSMaxRange(range));
-    }
-    return results;
 }
 
 - (void)setupNavbar {

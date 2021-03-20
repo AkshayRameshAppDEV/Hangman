@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HangmanBrain.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *hangmanLabel;
 @property (nonatomic, strong) UILabel *clueLabel;
+@property (nonatomic, strong) HangmanBrain *hangmanBrain;
 
 -(void) exitGame:(UIBarButtonItem *)sender;
 -(void) setupNavbar;
