@@ -162,7 +162,7 @@
     if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
         [self updateHangmanLabel];
         if (count < 1) {
-            [self showAlert];
+            [self showAlert:NSLocalizedString(@"game_view_tries_alert_title", nil) alertMessage:NSLocalizedString(@"game_view_tries_alert_message", nil) alertButtonTitle:NSLocalizedString(@"game_view_tries_alert_ok", nil)];
             return;
         }
     } else {
@@ -177,7 +177,7 @@
                                     UIButton *blankButton = (UIButton *)blanksButtonsView;
                                     [blankButton setTitle: NSLocalizedString(alphabet, nil) forState:UIControlStateNormal];
                                     if (blanksFilled == [self.hangmanBrain getWordOfTheDayLength]) {
-                                       [self showAlert];
+                                       [self showAlert:@"Congratulations" alertMessage:@"You Won" alertButtonTitle:@"OK"];
                                        return;
                                    }
                                 }
@@ -208,9 +208,9 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void) showAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"game_view_tries_alert_title", nil) message:NSLocalizedString(@"game_view_tries_alert_message", nil) preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"game_view_tries_alert_ok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+-(void) showAlert: (NSString*) title alertMessage:(NSString*) message alertButtonTitle:(NSString*) buttonTitle {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
     [alert addAction:yesAction];
