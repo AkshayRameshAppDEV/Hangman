@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.systemBackgroundColor;
     self.hangmanBrain = [[HangmanBrain alloc] init];
-    [self.hangmanBrain setWordOfTheDay:@"AKSHA"]; // TO BE REPLACED BY GAME VIEW CONTROLLER PROPERTY
+    [self.hangmanBrain setWordOfTheDay:@"AKSHAYRAMESH"]; // TO BE REPLACED BY GAME VIEW CONTROLLER PROPERTY
     alphabets = @[@[@"A", @"B", @"C", @"D", @"E"],
                   @[@"F", @"G", @"H", @"I", @"J"],
                   @[@"K", @"L", @"M", @"N", @"O"],
@@ -54,7 +54,7 @@
 -(UIStackView*) setupBlankHorizontalStackView {
     // Horizontal stack view of Blanks buttons
     NSMutableArray *blankButtonArray = [[NSMutableArray alloc] init];
-    for (int j = 0; j < 5; j++) {
+    for (int j = 0; j < [self.hangmanBrain getWordOfTheDayLength]; j++) {
         UIButton *blankButton = [[UIButton alloc] init];
         blankButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [blankButton setTitle: NSLocalizedString(@"_", nil) forState:UIControlStateNormal];

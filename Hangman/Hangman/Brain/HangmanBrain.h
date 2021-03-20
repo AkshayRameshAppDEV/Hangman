@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)rangesOfString:(NSString *)searchString inString:(NSString *)str;
 - (void) setWordOfTheDay: (NSString*) word;
 - (NSString*) getWordOfTheDay;
+- (NSInteger) getWordOfTheDayLength;
 
 @end
 

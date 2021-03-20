@@ -39,4 +39,8 @@
     return results;
 }
 
+- (NSInteger) getWordOfTheDayLength {
+    return [[self getWordOfTheDay] length];
+}
+
 @end
