@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.systemBackgroundColor;
     self.hangmanBrain = [[HangmanBrain alloc] init];
+    [self.hangmanBrain setWordOfTheDay:@"AKSHA"]; // TO BE REPLACED BY GAME VIEW CONTROLLER PROPERTY
     alphabets = @[@[@"A", @"B", @"C", @"D", @"E"],
                   @[@"F", @"G", @"H", @"I", @"J"],
                   @[@"K", @"L", @"M", @"N", @"O"],

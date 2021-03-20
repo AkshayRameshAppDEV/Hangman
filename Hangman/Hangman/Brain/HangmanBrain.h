@@ -11,8 +11,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HangmanBrain : NSObject
 
+@property (nonatomic, strong) NSString *wordOfTheDay;
+
 - (NSMutableArray*) getLetterLocations: (NSString*) alphabet;
 - (NSArray *)rangesOfString:(NSString *)searchString inString:(NSString *)str;
+- (void) setWordOfTheDay: (NSString*) word;
+- (NSString*) getWordOfTheDay;
 
 @end
 

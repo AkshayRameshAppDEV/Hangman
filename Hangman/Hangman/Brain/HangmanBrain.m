@@ -9,10 +9,17 @@
 
 @implementation HangmanBrain
 
+- (void) setWordOfTheDay: (NSString*) word {
+    _wordOfTheDay = word;
+}
+
+- (NSString*) getWordOfTheDay {
+    return _wordOfTheDay;
+}
+
 -(NSMutableArray*) getLetterLocations: (NSString*) alphabet {
-    NSString *word = @"HELLO";
     NSMutableArray *letterLocationArray = [[NSMutableArray alloc] init];
-    NSArray *results = [self rangesOfString:alphabet inString:word];
+    NSArray *results = [self rangesOfString:alphabet inString:[self getWordOfTheDay]];
     for (int i=0; i<results.count; i++) {
         NSValue *value = (NSValue *)results[i];
         NSRange range = [value rangeValue];
