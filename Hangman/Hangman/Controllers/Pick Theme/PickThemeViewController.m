@@ -160,7 +160,7 @@
 //MARK: BUTTONS CLICK LISTENER
 
 -(void) clickThemesButton: (UIButton*) sender {
-    NSLog(@"Button Clicked Name: %@", sender.titleLabel.text);
+    NSString *wordFromTheme = sender.titleLabel.text;
     switch (sender.tag) {
         case 0:
             NSLog(@"Call Movies API");
@@ -185,6 +185,7 @@
             break;
     }
     GameViewController *gameVC = [[GameViewController alloc] init];
+    gameVC.gameWord = wordFromTheme;
     [self.navigationController pushViewController:gameVC animated:YES];
 }
 

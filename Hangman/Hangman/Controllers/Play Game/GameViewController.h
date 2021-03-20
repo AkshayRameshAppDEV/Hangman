@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *hangmanLabel;
 @property (nonatomic, strong) UILabel *clueLabel;
 @property (nonatomic, strong) HangmanBrain *hangmanBrain;
+@property (nonatomic, strong) NSString *gameWord;
 
 -(void) exitGame:(UIBarButtonItem *)sender;
 -(void) setupNavbar;
