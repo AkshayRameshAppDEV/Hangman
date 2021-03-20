@@ -160,7 +160,7 @@
     if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
         [self updateHangmanLabel];
         if (count < 1) {
-            [self exitGame:nil];
+            [self showAlert];
             return;
         }
     } else {
@@ -197,6 +197,15 @@
     }];
     UIAlertAction *noAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"game_view_exit_alert_no", nil) style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:noAction];
+    [alert addAction:yesAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void) showAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"game_view_tries_alert_title", nil) message:NSLocalizedString(@"game_view_tries_alert_message", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"game_view_tries_alert_ok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
     [alert addAction:yesAction];
     [self presentViewController:alert animated:YES completion:nil];
 }

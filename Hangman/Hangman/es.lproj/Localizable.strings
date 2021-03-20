@@ -20,3 +20,6 @@
 "game_view_exit_alert_no" = "NO";
 "game_view_hangman_label" = "Tries Left: %d";
 "game_view_clue_label" = "(Clue)";
+"game_view_tries_alert_title" = "All Tries Used";
+"game_view_tries_alert_message" = "You have used all your tries. Please come back!";
+"game_view_tries_alert_ok" = "OK";

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIStackView*) setupBlankHorizontalStackView;
 -(UIStackView*) setupHorizontalStackViewOfAToZButtons;
 -(void) updateHangmanLabel;
+-(void) showAlert;
 
 @end
 
