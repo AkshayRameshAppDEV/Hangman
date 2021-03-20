@@ -10,6 +10,7 @@
 @interface GameViewController () {
     NSArray *alphabets;
     int count;
+    int blanksFilled;
 }
 
 @end
@@ -29,6 +30,7 @@
                   @"Z"
                  ];
     count = 7;
+    blanksFilled = 0;
     [self setupNavbar];
     [self setupLabels];
     [self setupStackViews];
@@ -164,6 +166,7 @@
             return;
         }
     } else {
+        blanksFilled++;
         for (UIView *mainSubView in self.view.subviews){
             if([mainSubView isKindOfClass:[UIStackView class]]){
                 for (UIView *subViewsInStackView in mainSubView.subviews){
@@ -173,6 +176,10 @@
                                 if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self.hangmanBrain getLetterLocations:alphabet] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
                                     UIButton *blankButton = (UIButton *)blanksButtonsView;
                                     [blankButton setTitle: NSLocalizedString(alphabet, nil) forState:UIControlStateNormal];
+                                    if (blanksFilled == [self.hangmanBrain getWordOfTheDayLength]) {
+                                       [self showAlert];
+                                       return;
+                                   }
                                 }
                                 alphabetLocationStopper++;
                             }
