@@ -22,4 +22,6 @@
 "game_view_clue_label" = "(Clue)";
 "game_view_tries_alert_title" = "All Tries Used";
 "game_view_tries_alert_message" = "You have used all your tries. Please come back!";
-"game_view_tries_alert_ok" = "OK";
+"game_view_alert_ok" = "OK";
+"game_view_win_alert_title" = "CONGRATULATIONS";
+"game_view_win_alert_message" = "You Have Won!";

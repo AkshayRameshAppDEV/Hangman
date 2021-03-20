@@ -162,7 +162,7 @@
     if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
         [self updateHangmanLabel];
         if (count < 1) {
-            [self showAlert:NSLocalizedString(@"game_view_tries_alert_title", nil) alertMessage:NSLocalizedString(@"game_view_tries_alert_message", nil) alertButtonTitle:NSLocalizedString(@"game_view_tries_alert_ok", nil)];
+            [self showAlert:NSLocalizedString(@"game_view_tries_alert_title", nil) alertMessage:NSLocalizedString(@"game_view_tries_alert_message", nil) alertButtonTitle:NSLocalizedString(@"game_view_alert_ok", nil)];
             return;
         }
     } else {
@@ -177,7 +177,7 @@
                                     UIButton *blankButton = (UIButton *)blanksButtonsView;
                                     [blankButton setTitle: NSLocalizedString(alphabet, nil) forState:UIControlStateNormal];
                                     if (blanksFilled == [self.hangmanBrain getWordOfTheDayLength]) {
-                                       [self showAlert:@"Congratulations" alertMessage:@"You Won" alertButtonTitle:@"OK"];
+                                       [self showAlert:NSLocalizedString(@"game_view_win_alert_title", nil) alertMessage:NSLocalizedString(@"game_view_win_alert_message", nil) alertButtonTitle:NSLocalizedString(@"game_view_alert_ok", nil)];
                                        return;
                                    }
                                 }
