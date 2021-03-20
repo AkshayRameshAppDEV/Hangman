@@ -210,10 +210,10 @@
 
 -(void) showAlert: (NSString*) title alertMessage:(NSString*) message alertButtonTitle:(NSString*) buttonTitle {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
-    [alert addAction:yesAction];
+    [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
