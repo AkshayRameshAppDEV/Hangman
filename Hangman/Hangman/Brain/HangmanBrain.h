@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) setWordOfTheDay: (NSString*) word;
 - (NSString*) getWordOfTheDay;
 - (NSInteger) getWordOfTheDayLength;
+- (BOOL) isAlphabetInWordOfTheDay: (NSString*) alphabet;
 
 @end
 

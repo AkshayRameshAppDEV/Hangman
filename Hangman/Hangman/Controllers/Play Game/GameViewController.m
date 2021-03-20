@@ -153,17 +153,22 @@
 
 -(void) alphabetPressed: (UIButton*) sender {
     int alphabetLocationStopper = 0;
-    for (UIView *mainSubView in self.view.subviews){
-        if([mainSubView isKindOfClass:[UIStackView class]]){
-            for (UIView *subViewsInStackView in mainSubView.subviews){
-                if([subViewsInStackView isKindOfClass:[UIStackView class]]){
-                    if(subViewsInStackView.tag == 100){
-                        for (UIView *blanksButtonsView in subViewsInStackView.subviews){
-                            if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self.hangmanBrain getLetterLocations:sender.titleLabel.text] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
-                                UIButton *blankButton = (UIButton *)blanksButtonsView;
-                                [blankButton setTitle: NSLocalizedString(sender.titleLabel.text, nil) forState:UIControlStateNormal];
+    NSString *alphabet = sender.titleLabel.text;
+    if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
+        self.hangmanLabel.text = @"GAMEOVER";
+    } else {
+        for (UIView *mainSubView in self.view.subviews){
+            if([mainSubView isKindOfClass:[UIStackView class]]){
+                for (UIView *subViewsInStackView in mainSubView.subviews){
+                    if([subViewsInStackView isKindOfClass:[UIStackView class]]){
+                        if(subViewsInStackView.tag == 100){
+                            for (UIView *blanksButtonsView in subViewsInStackView.subviews){
+                                if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self.hangmanBrain getLetterLocations:alphabet] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
+                                    UIButton *blankButton = (UIButton *)blanksButtonsView;
+                                    [blankButton setTitle: NSLocalizedString(alphabet, nil) forState:UIControlStateNormal];
+                                }
+                                alphabetLocationStopper++;
                             }
-                            alphabetLocationStopper++;
                         }
                     }
                 }

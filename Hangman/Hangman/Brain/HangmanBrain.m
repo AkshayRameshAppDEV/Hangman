@@ -43,4 +43,12 @@
     return [[self getWordOfTheDay] length];
 }
 
+- (BOOL) isAlphabetInWordOfTheDay: (NSString*) alphabet {
+    BOOL isAlphabetThere = NO;
+    if ([[self getWordOfTheDay] rangeOfString:alphabet].location != NSNotFound) {
+        isAlphabetThere = YES;
+    }
+    return isAlphabetThere;
+}
+
 @end
