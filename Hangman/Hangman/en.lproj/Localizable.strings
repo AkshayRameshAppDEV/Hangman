@@ -18,5 +18,5 @@
 "game_view_exit_alert_message" = "Do you want to exit game?";
 "game_view_exit_alert_yes" = "YES";
 "game_view_exit_alert_no" = "NO";
-"game_view_hangman_label" = "HANGMAN";
+"game_view_hangman_label" = "Tries Left: %d";
 "game_view_clue_label" = "(Clue)";

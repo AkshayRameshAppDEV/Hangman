@@ -9,6 +9,7 @@
 
 @interface GameViewController () {
     NSArray *alphabets;
+    int count;
 }
 
 @end
@@ -27,6 +28,7 @@
                   @[@"U", @"V", @"W", @"X", @"Y"],
                   @"Z"
                  ];
+    count = 7;
     [self setupNavbar];
     [self setupLabels];
     [self setupStackViews];
@@ -36,7 +38,7 @@
     
     // Hangman Label
     self.hangmanLabel = [[UILabel alloc] init];
-    self.hangmanLabel.text = NSLocalizedString(@"game_view_hangman_label", nil);
+    self.hangmanLabel.text = [NSString stringWithFormat:NSLocalizedString(@"game_view_hangman_label", nil),count];
     self.hangmanLabel.textAlignment = NSTextAlignmentCenter;
     self.hangmanLabel.numberOfLines = 0;
     self.hangmanLabel.font = [UIFont systemFontOfSize:30.0];
@@ -153,9 +155,11 @@
 
 -(void) alphabetPressed: (UIButton*) sender {
     int alphabetLocationStopper = 0;
+    [sender setHidden:YES];
     NSString *alphabet = sender.titleLabel.text;
     if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
-        self.hangmanLabel.text = @"GAMEOVER";
+        count--;
+        self.hangmanLabel.text = [NSString stringWithFormat:NSLocalizedString(@"game_view_hangman_label", nil),count];
     } else {
         for (UIView *mainSubView in self.view.subviews){
             if([mainSubView isKindOfClass:[UIStackView class]]){
