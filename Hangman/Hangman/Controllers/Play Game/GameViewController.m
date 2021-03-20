@@ -158,8 +158,11 @@
     [sender setHidden:YES];
     NSString *alphabet = sender.titleLabel.text;
     if (![self.hangmanBrain isAlphabetInWordOfTheDay:alphabet]) {
-        count--;
-        self.hangmanLabel.text = [NSString stringWithFormat:NSLocalizedString(@"game_view_hangman_label", nil),count];
+        [self updateHangmanLabel];
+        if (count < 1) {
+            [self exitGame:nil];
+            return;
+        }
     } else {
         for (UIView *mainSubView in self.view.subviews){
             if([mainSubView isKindOfClass:[UIStackView class]]){
@@ -196,6 +199,11 @@
     [alert addAction:noAction];
     [alert addAction:yesAction];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void) updateHangmanLabel {
+    count--;
+    self.hangmanLabel.text = [NSString stringWithFormat:NSLocalizedString(@"game_view_hangman_label", nil),count];
 }
 
 @end
