@@ -166,7 +166,6 @@
             return;
         }
     } else {
-        blanksFilled++;
         for (UIView *mainSubView in self.view.subviews){
             if([mainSubView isKindOfClass:[UIStackView class]]){
                 for (UIView *subViewsInStackView in mainSubView.subviews){
@@ -174,6 +173,7 @@
                         if(subViewsInStackView.tag == 100){
                             for (UIView *blanksButtonsView in subViewsInStackView.subviews){
                                 if([blanksButtonsView isKindOfClass:[UIButton class]] && [[self.hangmanBrain getLetterLocations:alphabet] containsObject:[NSNumber numberWithInteger:alphabetLocationStopper]]){
+                                    blanksFilled++;
                                     UIButton *blankButton = (UIButton *)blanksButtonsView;
                                     [blankButton setTitle: NSLocalizedString(alphabet, nil) forState:UIControlStateNormal];
                                     if (blanksFilled == [self.hangmanBrain getWordOfTheDayLength]) {
