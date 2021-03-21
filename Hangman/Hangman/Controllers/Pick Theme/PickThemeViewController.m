@@ -161,6 +161,7 @@
 
 -(void) clickThemesButton: (UIButton*) sender {
     NSString *wordFromTheme = sender.titleLabel.text;
+    NSString *clue = @"Theme";
     switch (sender.tag) {
         case 0:
             NSLog(@"Call Movies API");
@@ -186,6 +187,7 @@
     }
     GameViewController *gameVC = [[GameViewController alloc] init];
     gameVC.gameWord = wordFromTheme;
+    gameVC.clue = clue;
     [self.navigationController pushViewController:gameVC animated:YES];
 }
 

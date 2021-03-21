@@ -48,7 +48,7 @@
     
     // Clues Label
     self.clueLabel = [[UILabel alloc] init];
-    self.clueLabel.text = NSLocalizedString(@"game_view_clue_label", nil);
+    self.clueLabel.text =[NSString stringWithFormat:NSLocalizedString(@"game_view_clue_label", nil), self.clue];
     self.clueLabel.textAlignment = NSTextAlignmentCenter;
     self.clueLabel.numberOfLines = 0;
     self.clueLabel.font = [UIFont systemFontOfSize:30.0];
