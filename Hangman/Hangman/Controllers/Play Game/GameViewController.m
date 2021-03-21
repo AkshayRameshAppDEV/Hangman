@@ -61,7 +61,12 @@
     for (int j = 0; j < [self.hangmanBrain getWordOfTheDayLength]; j++) {
         UIButton *blankButton = [[UIButton alloc] init];
         blankButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        [blankButton setTitle: NSLocalizedString(@"_", nil) forState:UIControlStateNormal];
+        if ([[self.hangmanBrain getWordOfTheDay] characterAtIndex:j] == ' ') {
+            blanksFilled++;
+            [blankButton setTitle: NSLocalizedString(@" ", nil) forState:UIControlStateNormal];
+        } else {
+            [blankButton setTitle: NSLocalizedString(@"_", nil) forState:UIControlStateNormal];
+        }
         blankButton.titleLabel.numberOfLines = 0;
         [blankButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
         [blankButton setUserInteractionEnabled:NO];
