@@ -22,6 +22,7 @@
 -(void) setUpHorizontalStackViewButtons;
 -(void) setUpStackViews;
 -(void) clickThemesButton: (UIButton*) sender;
+- (void) showNoInternetAlert;
 
 @end
 
