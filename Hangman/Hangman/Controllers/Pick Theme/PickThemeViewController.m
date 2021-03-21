@@ -28,8 +28,8 @@
 }
 
 - (void) showNoInternetAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"NO INTERNET" message:@"Please goto Settings and turn on your Wi-Fi." preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"pick_theme_view_no_internet_alert_title", nil) message:NSLocalizedString(@"pick_theme_view_no_internet_alert_message", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"pick_theme_view_no_internet_ok", nil) style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
