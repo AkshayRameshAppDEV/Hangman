@@ -5,23 +5,23 @@
   Created by Akshay Ramesh on 3/7/21.
   
 */
-"pick_theme_welcome_to_hangman_title_label" = "Welcome to Hangman";
-"pick_theme_sub_title_label" = "Pick a Theme";
-"pick_theme_movies_button_title" = "MOVIES";
-"pick_theme_tv_shows_button_title" = "TV SHOWS";
-"pick_theme_countries_button_title" = "COUNTRIES";
-"pick_theme_famous_people_button_title" = "FAMOUS PEOPLE";
-"pick_theme_dictionary_words_button_title" = "DICTIONARY WORDS";
-"pick_theme_mix_all_button_title" = "MIX ALL";
-"game_view_nav_left_bar_button_item_title" = "Back";
-"game_view_exit_alert_title" = "EXIT GAME";
-"game_view_exit_alert_message" = "Do you want to exit game?";
-"game_view_exit_alert_yes" = "YES";
+"pick_theme_welcome_to_hangman_title_label" = "Bienvenida a ahorcado";
+"pick_theme_sub_title_label" = "Elige un tema";
+"pick_theme_movies_button_title" = "PELÍCULAS";
+"pick_theme_tv_shows_button_title" = "PROGRAMAS DE TELEVISIÓN";
+"pick_theme_countries_button_title" = "LOS PAISES";
+"pick_theme_famous_people_button_title" = "GENTE FAMOSA";
+"pick_theme_dictionary_words_button_title" = "PALABRAS DEL DICCIONARIO";
+"pick_theme_mix_all_button_title" = "MEZCLA TODO";
+"game_view_nav_left_bar_button_item_title" = "atrás";
+"game_view_exit_alert_title" = "SALIR DEL JUEGO";
+"game_view_exit_alert_message" = "¿Quieres salir del juego?";
+"game_view_exit_alert_yes" = "SÍ";
 "game_view_exit_alert_no" = "NO";
-"game_view_hangman_label" = "Tries Left: %d";
+"game_view_hangman_label" = "Intentos a la izquierda: %d";
 "game_view_clue_label" = "(%@)";
-"game_view_tries_alert_title" = "All Tries Used";
-"game_view_tries_alert_message" = "You have used all your tries. Please come back!";
+"game_view_tries_alert_title" = "Todos los intentos utilizados";
+"game_view_tries_alert_message" = "Has utilizado todos tus intentos. ¡Por favor regrese!";
 "game_view_alert_ok" = "OK";
-"game_view_win_alert_title" = "CONGRATULATIONS";
-"game_view_win_alert_message" = "You Have Won!";
+"game_view_win_alert_title" = "FELICIDADES";
+"game_view_win_alert_message" = "¡Usted ha ganado!";
