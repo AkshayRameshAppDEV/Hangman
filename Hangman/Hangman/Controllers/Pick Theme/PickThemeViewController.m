@@ -186,7 +186,7 @@
             break;
     }
     GameViewController *gameVC = [[GameViewController alloc] init];
-    gameVC.gameWord = wordFromTheme;
+    gameVC.gameWord = [wordFromTheme uppercaseString];
     gameVC.clue = clue;
     [self.navigationController pushViewController:gameVC animated:YES];
 }
