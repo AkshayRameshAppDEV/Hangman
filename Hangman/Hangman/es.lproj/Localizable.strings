@@ -13,8 +13,8 @@
 "pick_theme_famous_people_button_title" = "GENTE FAMOSA";
 "pick_theme_dictionary_words_button_title" = "PALABRAS DEL DICCIONARIO";
 "pick_theme_mix_all_button_title" = "MEZCLA TODO";
-"pick_theme_view_no_internet_alert_title" = "NO INTERNET";
-"pick_theme_view_no_internet_alert_message" = "Please goto Settings and turn on your internet connection";
+"pick_theme_view_no_internet_alert_title" = "SIN INTERNET";
+"pick_theme_view_no_internet_alert_message" = "Vaya a Configuración y encienda su conexión a Internet";
 "pick_theme_view_no_internet_ok" = "OK";
 "game_view_nav_left_bar_button_item_title" = "atrás";
 "game_view_exit_alert_title" = "SALIR DEL JUEGO";
