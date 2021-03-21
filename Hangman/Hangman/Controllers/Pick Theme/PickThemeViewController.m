@@ -28,7 +28,10 @@
 }
 
 - (void) showNoInternetAlert {
-    NSLog(@"NO INTERNET VIEW CONTROLLER");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"NO INTERNET" message:@"Please goto Settings and turn on your Wi-Fi." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)dealloc {
