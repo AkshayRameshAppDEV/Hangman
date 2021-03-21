@@ -20,6 +20,7 @@
 		B96AF83225F4295E00B521EC /* HangmanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF83125F4295E00B521EC /* HangmanUITests.m */; };
 		B96AF88C25F5A8F600B521EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96AF88E25F5A8F600B521EC /* Localizable.strings */; };
 		B99FE1402606E09F00620B4D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FE13D2606E09F00620B4D /* Reachability.m */; };
+		B99FE15E2606F20600620B4D /* ReachabilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FE15D2606F20600620B4D /* ReachabilityHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		B99FE13D2606E09F00620B4D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B99FE13E2606E09F00620B4D /* Reachability-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability-Prefix.pch"; sourceTree = "<group>"; };
 		B99FE13F2606E09F00620B4D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B99FE15C2606F20600620B4D /* ReachabilityHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReachabilityHelper.h; sourceTree = "<group>"; };
+		B99FE15D2606F20600620B4D /* ReachabilityHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReachabilityHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				B99FE13D2606E09F00620B4D /* Reachability.m */,
 				B99FE13E2606E09F00620B4D /* Reachability-Prefix.pch */,
 				B99FE13F2606E09F00620B4D /* Reachability.h */,
+				B99FE15C2606F20600620B4D /* ReachabilityHelper.h */,
+				B99FE15D2606F20600620B4D /* ReachabilityHelper.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99FE15E2606F20600620B4D /* ReachabilityHelper.m in Sources */,
 				B930655325F9E26400EFD56E /* GameViewController.m in Sources */,
 				B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */,
 				B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */,

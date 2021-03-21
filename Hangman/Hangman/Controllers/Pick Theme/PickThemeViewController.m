@@ -7,11 +7,11 @@
 
 #import "PickThemeViewController.h"
 #import "GameViewController.h"
-#import "Reachability.h"
+#import "ReachabilityHelper.h"
 
-@interface PickThemeViewController ()
-
-@property (nonatomic) Reachability *internetReachability;
+@interface PickThemeViewController () {
+    ReachabilityHelper *reachabilityHelper;
+}
 
 @end
 
@@ -22,47 +22,19 @@
     [self setUpTopLabels];
     [self setUpHorizontalStackViewButtons];
     [self setUpStackViews];
-    /*
-     Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
-     */
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
-
-    self.internetReachability = [Reachability reachabilityForInternetConnection];
-    [self.internetReachability startNotifier];
-    [self updateInterfaceWithReachability:self.internetReachability];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNoInternetAlert) name:@"no_internet_notification" object:nil];
+    reachabilityHelper = [[ReachabilityHelper alloc] init];
+    [reachabilityHelper setup];
 }
 
-/*!
- * Called by Reachability whenever status changes.
- */
-- (void) reachabilityChanged:(NSNotification *)note {
-    Reachability* curReach = [note object];
-    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
-    [self updateInterfaceWithReachability:curReach];
-}
-
-- (void)updateInterfaceWithReachability:(Reachability *)reachability {
-    if (reachability == self.internetReachability) {
-        NetworkStatus netStatus = [reachability currentReachabilityStatus];
-        BOOL connectionRequired = [reachability connectionRequired];
-        switch (netStatus) {
-            case NotReachable: {
-                connectionRequired = NO;
-                NSLog(@"NO INTERNET");
-                break;
-            }
-            case ReachableViaWWAN:
-            case ReachableViaWiFi: {
-                NSLog(@"YES INTERNET");
-                break;
-            }
-        }
-    }
+- (void) showNoInternetAlert {
+    NSLog(@"NO INTERNET VIEW CONTROLLER");
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 
 //MARK: LABELS
 -(void) setUpTopLabels {
