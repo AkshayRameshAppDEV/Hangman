@@ -19,6 +19,7 @@
 		B96AF82725F4295E00B521EC /* HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF82625F4295E00B521EC /* HangmanTests.m */; };
 		B96AF83225F4295E00B521EC /* HangmanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96AF83125F4295E00B521EC /* HangmanUITests.m */; };
 		B96AF88C25F5A8F600B521EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B96AF88E25F5A8F600B521EC /* Localizable.strings */; };
+		B99FE1402606E09F00620B4D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FE13D2606E09F00620B4D /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,9 @@
 		B96AF88325F5A88800B521EC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		B96AF88D25F5A8F600B521EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B96AF89225F5A90A00B521EC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B99FE13D2606E09F00620B4D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B99FE13E2606E09F00620B4D /* Reachability-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability-Prefix.pch"; sourceTree = "<group>"; };
+		B99FE13F2606E09F00620B4D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		B96AF80925F4295D00B521EC /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				B99FE13C2606E09F00620B4D /* Reachability */,
 				B9306569260078F800EFD56E /* Brain */,
 				B96AF84225F4358900B521EC /* Main App Delegates */,
 				B96AF84A25F4366600B521EC /* Controllers */,
@@ -198,6 +203,16 @@
 				B96AF81125F4295D00B521EC /* PickThemeViewController.m */,
 			);
 			path = "Pick Theme";
+			sourceTree = "<group>";
+		};
+		B99FE13C2606E09F00620B4D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B99FE13D2606E09F00620B4D /* Reachability.m */,
+				B99FE13E2606E09F00620B4D /* Reachability-Prefix.pch */,
+				B99FE13F2606E09F00620B4D /* Reachability.h */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +349,7 @@
 				B930655325F9E26400EFD56E /* GameViewController.m in Sources */,
 				B96AF81225F4295D00B521EC /* PickThemeViewController.m in Sources */,
 				B96AF80C25F4295D00B521EC /* AppDelegate.m in Sources */,
+				B99FE1402606E09F00620B4D /* Reachability.m in Sources */,
 				B96AF81D25F4295D00B521EC /* main.m in Sources */,
 				B96AF80F25F4295D00B521EC /* SceneDelegate.m in Sources */,
 				B930656C2600793800EFD56E /* HangmanBrain.m in Sources */,
@@ -522,6 +538,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94WH9ZZCLU;
+				GCC_PREFIX_HEADER = "Hangman/Reachability/Reachability-Prefix.pch";
 				INFOPLIST_FILE = Hangman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94WH9ZZCLU;
+				GCC_PREFIX_HEADER = "Hangman/Reachability/Reachability-Prefix.pch";
 				INFOPLIST_FILE = Hangman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
