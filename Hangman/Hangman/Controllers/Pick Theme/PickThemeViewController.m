@@ -35,42 +35,33 @@
 /*!
  * Called by Reachability whenever status changes.
  */
-- (void) reachabilityChanged:(NSNotification *)note
-{
+- (void) reachabilityChanged:(NSNotification *)note {
     Reachability* curReach = [note object];
     NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
     [self updateInterfaceWithReachability:curReach];
 }
 
-- (void)updateInterfaceWithReachability:(Reachability *)reachability
-{
+- (void)updateInterfaceWithReachability:(Reachability *)reachability {
     if (reachability == self.internetReachability) {
-        [self getInternetStatus:reachability];
+        NetworkStatus netStatus = [reachability currentReachabilityStatus];
+        BOOL connectionRequired = [reachability connectionRequired];
+        switch (netStatus) {
+            case NotReachable: {
+                connectionRequired = NO;
+                NSLog(@"NO INTERNET");
+                break;
+            }
+            case ReachableViaWWAN:
+            case ReachableViaWiFi: {
+                NSLog(@"YES INTERNET");
+                break;
+            }
+        }
     }
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
-}
-
-- (void)getInternetStatus: (Reachability *)reachability {
-    
-    NetworkStatus netStatus = [reachability currentReachabilityStatus];
-    BOOL connectionRequired = [reachability connectionRequired];
-    switch (netStatus) {
-        case NotReachable: {
-            connectionRequired = NO;
-            NSLog(@"NO INTERNET");
-            break;
-        }
-        case ReachableViaWWAN:
-        case ReachableViaWiFi: {
-            NSLog(@"YES INTERNET");
-            break;
-        }
-    }
-    
 }
 
 //MARK: LABELS
