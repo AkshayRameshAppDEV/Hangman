@@ -6,7 +6,31 @@ func routes(_ app: Application) throws {
         guard let tag = req.parameters.get("tag", as: Int.self) else {
             throw Abort(.badRequest)
         }
-        return try getThemeJSON(with: tag, wordOfTheDay: "Akshay", clueForWordOfTheDay: "name")
+        var themeJSON: String
+        switch (tag) {
+            case 0:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Movies", clueForWordOfTheDay: "M")
+                break;
+            case 1:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "TV shows", clueForWordOfTheDay: "TV")
+                break;
+            case 2:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Countries", clueForWordOfTheDay: "C")
+                break;
+            case 3:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Famous People", clueForWordOfTheDay: "Famous")
+                break;
+            case 4:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Dictionary", clueForWordOfTheDay: "D")
+                break;
+            case 5:
+                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Mix All", clueForWordOfTheDay: "M")
+                break;
+            default:
+                themeJSON = "{}"
+                break;
+        }
+        return themeJSON
     }
 }
 
