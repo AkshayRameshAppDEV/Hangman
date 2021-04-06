@@ -9,22 +9,22 @@ func routes(_ app: Application) throws {
         var themeJSON: String
         switch (tag) {
             case 0:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Movies", clueForWordOfTheDay: "M")
+                themeJSON = try getThemeJSON(wordOfTheDay: "Movies", clueForWordOfTheDay: "M")
                 break;
             case 1:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "TV shows", clueForWordOfTheDay: "TV")
+                themeJSON = try getThemeJSON(wordOfTheDay: "TV shows", clueForWordOfTheDay: "TV")
                 break;
             case 2:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Countries", clueForWordOfTheDay: "C")
+                themeJSON = try getThemeJSON(wordOfTheDay: "Countries", clueForWordOfTheDay: "C")
                 break;
             case 3:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Famous People", clueForWordOfTheDay: "Famous")
+                themeJSON = try getThemeJSON(wordOfTheDay: "Famous People", clueForWordOfTheDay: "Famous")
                 break;
             case 4:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Dictionary", clueForWordOfTheDay: "D")
+                themeJSON = try getThemeJSON(wordOfTheDay: "Dictionary", clueForWordOfTheDay: "D")
                 break;
             case 5:
-                themeJSON = try getThemeJSON(with: tag, wordOfTheDay: "Mix All", clueForWordOfTheDay: "M")
+                themeJSON = try getThemeJSON(wordOfTheDay: "Mix All", clueForWordOfTheDay: "M")
                 break;
             default:
                 themeJSON = "{}"
@@ -34,10 +34,10 @@ func routes(_ app: Application) throws {
     }
 }
 
-func getThemeJSON(with tag: Int, wordOfTheDay word: String, clueForWordOfTheDay clue: String) throws -> String  {
+func getThemeJSON(wordOfTheDay word: String, clueForWordOfTheDay clue: String) throws -> String  {
     let theme = Theme(wordOfTheDay: word, clue: clue)
     let jsonEncoder = JSONEncoder()
     let jsonData = try jsonEncoder.encode(theme)
     guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {return "{}"}
-    return "\(json) + \(tag)"
+    return "\(json)"
 }
