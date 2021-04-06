@@ -9,11 +9,9 @@ struct Theme: Codable {
 
     var wordOfTheDay: String
     var clue: String
-    var type: String
 
-    init(wordOfTheDay: String, clue: String, type: String) {
+    init(wordOfTheDay: String, clue: String) {
         self.wordOfTheDay = wordOfTheDay
         self.clue = clue
-        self.type = type
     }
 }

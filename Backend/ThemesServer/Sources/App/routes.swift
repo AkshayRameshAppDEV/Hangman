@@ -6,7 +6,7 @@ func routes(_ app: Application) throws {
         guard let tag = req.parameters.get("tag", as: Int.self) else {
             throw Abort(.badRequest)
         }
-        let theme = Theme(wordOfTheDay: "Hello", clue: "phone", type: "dictionary")
+        let theme = Theme(wordOfTheDay: "Hello", clue: "phone")
         let jsonEncoder = JSONEncoder()
         let jsonData = try jsonEncoder.encode(theme)
         guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {return "invalid"}
