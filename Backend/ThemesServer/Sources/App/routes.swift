@@ -9,34 +9,22 @@ func routes(_ app: Application) throws {
         var themeJSON: String
         switch (tag) {
             case 0:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Movies")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "Movies")
                 break;
             case 1:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("TV_Shows")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "TV_Shows")
                 break;
             case 2:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Countries")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "Countries")
                 break;
             case 3:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Famous_People")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "Famous_People")
                 break;
             case 4:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Dictionary")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "Dictionary")
                 break;
             case 5:
-                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Mix_All")
-                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
-                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
+                themeJSON = try JSONBuilderFromFile(theme: "Mix_All")
                 break;
             default:
                 themeJSON = "{}"
@@ -44,6 +32,12 @@ func routes(_ app: Application) throws {
         }
         return themeJSON
     }
+}
+
+func JSONBuilderFromFile(theme: String) throws -> String {
+    let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile(theme)
+    guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+    return try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
 }
 
 func getWordOfTheDayAndClueFromFile(_ theme: String) throws -> [String:String] {
