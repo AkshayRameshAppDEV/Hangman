@@ -9,22 +9,34 @@ func routes(_ app: Application) throws {
         var themeJSON: String
         switch (tag) {
             case 0:
-                themeJSON = try getThemeJSON(wordOfTheDay: "Movies", clueForWordOfTheDay: "M")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Movies")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             case 1:
-                themeJSON = try getThemeJSON(wordOfTheDay: "TV shows", clueForWordOfTheDay: "TV")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("TV_Shows")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             case 2:
-                themeJSON = try getThemeJSON(wordOfTheDay: "Countries", clueForWordOfTheDay: "C")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Countries")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             case 3:
-                themeJSON = try getThemeJSON(wordOfTheDay: "Famous People", clueForWordOfTheDay: "Famous")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Famous_People")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             case 4:
-                themeJSON = try getThemeJSON(wordOfTheDay: "Dictionary", clueForWordOfTheDay: "D")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Dictionary")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             case 5:
-                themeJSON = try getThemeJSON(wordOfTheDay: "Mix All", clueForWordOfTheDay: "M")
+                let wordOfTheDayAndClueFromFile = try getWordOfTheDayAndClueFromFile("Mix_All")
+                guard let x = wordOfTheDayAndClueFromFile.first else {return ""}
+                themeJSON = try getThemeJSON(wordOfTheDay: x.key, clueForWordOfTheDay: x.value)
                 break;
             default:
                 themeJSON = "{}"
@@ -32,6 +44,29 @@ func routes(_ app: Application) throws {
         }
         return themeJSON
     }
+}
+
+func getWordOfTheDayAndClueFromFile(_ theme: String) throws -> [String:String] {
+    let filepath = "/Users/akshayramesh/Desktop/Side_Projects/Hangman/Backend/ThemesServer/Sources/App/Data/\(theme).txt"
+    var themeDict = [String:String]()
+    var randomWordOfTheDayAndClueDict = [String:String]()
+    do {
+        let themeFileContents = try String(contentsOfFile: filepath)
+        let themeFileItems = themeFileContents.components(separatedBy: "\n")
+        for themeFileItem in themeFileItems {
+            guard let wordOfTheDay = themeFileItem.components(separatedBy: " : ").first else {return [:]}
+            guard let clue = themeFileItem.components(separatedBy: " : ").last else {return[:]}
+            if (wordOfTheDay != "" && clue != "") {
+                themeDict[wordOfTheDay] = clue
+            }
+        }
+        if let wordAndClueDict = themeDict.randomElement() {
+            randomWordOfTheDayAndClueDict[wordAndClueDict.key] = wordAndClueDict.value
+        }
+    } catch {
+        print("\(error.localizedDescription)")
+    }
+    return randomWordOfTheDayAndClueDict
 }
 
 func getThemeJSON(wordOfTheDay word: String, clueForWordOfTheDay clue: String) throws -> String  {
