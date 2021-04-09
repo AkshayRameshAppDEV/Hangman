@@ -69,7 +69,7 @@
     self.moviesButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.moviesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.moviesButton.translatesAutoresizingMaskIntoConstraints = false;
-
+    
     // TV Shows Button
     self.tvShowsButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.tvShowsButton setTitle: NSLocalizedString(@"pick_theme_tv_shows_button_title", nil) forState:UIControlStateNormal];
@@ -89,7 +89,7 @@
     self.countriesButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.countriesButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.countriesButton.translatesAutoresizingMaskIntoConstraints = false;
-
+    
     // Famous People Button
     self.famousPeopleButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.famousPeopleButton setTitle: NSLocalizedString(@"pick_theme_famous_people_button_title", nil) forState:UIControlStateNormal];
@@ -109,7 +109,7 @@
     self.wordsFromDictionaryButton.layer.borderColor = UIColor.systemGrayColor.CGColor;
     [self.wordsFromDictionaryButton addTarget:self action:@selector(clickThemesButton:) forControlEvents:UIControlEventTouchUpInside];
     self.wordsFromDictionaryButton.translatesAutoresizingMaskIntoConstraints = false;
-
+    
     // MIX ALL Button
     self.mixAllThemesButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.mixAllThemesButton setTitle: NSLocalizedString(@"pick_theme_mix_all_button_title", nil) forState:UIControlStateNormal];
@@ -181,9 +181,37 @@
     NSString *wordFromTheme = sender.titleLabel.text;
     NSString *clue = @"Theme";
     switch (sender.tag) {
-        case 0:
+        case 0:{
             NSLog(@"Call Movies API");
+            NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:8080/themes/0"]];
+            
+            //create the Method "GET"
+            [urlRequest setHTTPMethod:@"GET"];
+            
+            NSURLSession *session = [NSURLSession sharedSession];
+            
+            NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                              {
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                if(httpResponse.statusCode == 200)
+                {
+                    NSError *parseError = nil;
+                    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        GameViewController *gameVC = [[GameViewController alloc] init];
+                        gameVC.gameWord = [responseDictionary objectForKey:@"wordOfTheDay"];
+                        gameVC.clue = [responseDictionary objectForKey:@"clue"];;
+                        [self.navigationController pushViewController:gameVC animated:YES];
+                    });
+                }
+                else
+                {
+                    NSLog(@"Error");
+                }
+            }];
+            [dataTask resume];
             break;
+        }
         case 1:
             NSLog(@"Call TV SHOWS API");
             break;
@@ -203,10 +231,6 @@
             NSLog(@"INVALID BUTTON");
             break;
     }
-    GameViewController *gameVC = [[GameViewController alloc] init];
-    gameVC.gameWord = [wordFromTheme uppercaseString];
-    gameVC.clue = clue;
-    [self.navigationController pushViewController:gameVC animated:YES];
 }
 
 @end
