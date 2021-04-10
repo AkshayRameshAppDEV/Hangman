@@ -47,21 +47,21 @@ This is the iOS client app which utilizes above started backend vapo server to g
 
 ## Screenshots
 <div>
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e1.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e2.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e3.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e1.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e2.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e3.png" width="250" height="500">
 </div>
 <div>
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e4.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e5.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e6.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e7.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e4.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e5.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e6.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e7.png" width="250" height="500">
 </div>
 *************
 
 ## Localization - Spanish
 <div>
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s1.png" width="350" height="350">
-    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s2.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s1.png" width="250" height="500">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s2.png" width="250" height="500">
 </div>
