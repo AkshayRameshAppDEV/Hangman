@@ -2,14 +2,15 @@
 import XCTVapor
 
 final class AppTests: XCTestCase {
-    func testHelloWorld() throws {
+    func testThemesEndpoint() throws {
         let app = Application(.testing)
         defer { app.shutdown() }
         try configure(app)
-
-        try app.test(.GET, "hello", afterResponse: { res in
-            XCTAssertEqual(res.status, .ok)
-            XCTAssertEqual(res.body.string, "Hello, world!")
-        })
+        for i in 0...5 {
+            try app.test(.GET, "themes/\(i)", afterResponse: { res in
+                XCTAssertEqual(res.status, .ok)
+                XCTAssertNotEqual(res.body.string, "{}")
+            })
+        }
     }
 }
