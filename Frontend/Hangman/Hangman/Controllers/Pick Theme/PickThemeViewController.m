@@ -200,7 +200,7 @@
 }
 
 -(void) clickThemesButton: (UIButton*) sender {
-    NSString *themeUrl = [NSString stringWithFormat:@"http://YOUR_IP_ADDRESS/themes/%ld",sender.tag];
+    NSString *themeUrl = [NSString stringWithFormat:@"http://YOUR_IP_ADDRESS:8080/themes/%ld",sender.tag];
     [self getWordOfTheDayAndClueForThemeAndPlay:themeUrl];
 }
 
