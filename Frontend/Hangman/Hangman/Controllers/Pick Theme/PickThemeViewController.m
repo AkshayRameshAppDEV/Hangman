@@ -175,62 +175,31 @@
     [mainstackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = true;
 }
 
-//MARK: BUTTONS CLICK LISTENER
+-(void) getWordOfTheDayAndClueForThemeAndPlay: (NSString*) url {
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [urlRequest setHTTPMethod:@"GET"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if(httpResponse.statusCode == 200) {
+            NSError *parseError = nil;
+            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                GameViewController *gameVC = [[GameViewController alloc] init];
+                gameVC.gameWord = [responseDictionary objectForKey:@"wordOfTheDay"];
+                gameVC.clue = [responseDictionary objectForKey:@"clue"];;
+                [self.navigationController pushViewController:gameVC animated:YES];
+            });
+        } else {
+            NSLog(@"Error");
+        }
+    }];
+    [dataTask resume];
+}
 
 -(void) clickThemesButton: (UIButton*) sender {
-    NSString *wordFromTheme = sender.titleLabel.text;
-    NSString *clue = @"Theme";
-    switch (sender.tag) {
-        case 0:{
-            NSLog(@"Call Movies API");
-            NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:8080/themes/0"]];
-            
-            //create the Method "GET"
-            [urlRequest setHTTPMethod:@"GET"];
-            
-            NSURLSession *session = [NSURLSession sharedSession];
-            
-            NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                                              {
-                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-                if(httpResponse.statusCode == 200)
-                {
-                    NSError *parseError = nil;
-                    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        GameViewController *gameVC = [[GameViewController alloc] init];
-                        gameVC.gameWord = [responseDictionary objectForKey:@"wordOfTheDay"];
-                        gameVC.clue = [responseDictionary objectForKey:@"clue"];;
-                        [self.navigationController pushViewController:gameVC animated:YES];
-                    });
-                }
-                else
-                {
-                    NSLog(@"Error");
-                }
-            }];
-            [dataTask resume];
-            break;
-        }
-        case 1:
-            NSLog(@"Call TV SHOWS API");
-            break;
-        case 2:
-            NSLog(@"Call COUNTRIES API");
-            break;
-        case 3:
-            NSLog(@"Call FAMOUS PEOPLE API");
-            break;
-        case 4:
-            NSLog(@"Call DICTIONARY WORDS API");
-            break;
-        case 5:
-            NSLog(@"Call MIX ALL API");
-            break;
-        default:
-            NSLog(@"INVALID BUTTON");
-            break;
-    }
+    NSString *themeUrl = [NSString stringWithFormat:@"http://127.0.0.1:8080/themes/%ld",sender.tag];
+    [self getWordOfTheDayAndClueForThemeAndPlay:themeUrl];
 }
 
 @end
