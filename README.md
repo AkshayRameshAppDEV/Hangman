@@ -57,7 +57,8 @@ This is the iOS client app which utilizes above started backend vapo server to g
     <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e6.png" width="250" height="500">
     <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e7.png" width="250" height="500">
 </div>
-*************
+
+***************************************
 
 ## Localization - Spanish
 <div>
