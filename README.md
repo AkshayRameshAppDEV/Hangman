@@ -25,7 +25,9 @@ After installing vapor or if you have vapor already, follow the instructions bel
 4. When it runs successfuly, it should start the localhost server at the specified port on the console.
 5. Once the server is successfully running, you can test by typing this endpoint on the browser for example:- `http://127.0.0.1:8080/themes/0` and this should return JSON
 
-**IMPORTANT NOTE:** If you want to try setting up the above server in a real device, then Goto your target in the vapor > Edit Scheme > Run > In the Arguments passed on launch > Type the following like in the in the screenshot below.
+**IMPORTANT NOTE:** *If you want to try setting up the above server in a real device, then Goto your target in the vapor > Edit Scheme > Run > In the Arguments passed on launch > Type the following like in the in the screenshot below.*
+
+**MAKE SURE YOUR IPHONE WIFI IS CONNECTED TO SAME AS YOUR MAC'S WIFI, SO THAT IP ADDRESS SUPPLIED WILL BE THE SAME.** 
 ```
 serve --hostname YOUR_IP_ADDRESS --port 8080
 ```
