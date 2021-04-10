@@ -41,3 +41,27 @@ This is the iOS client app which utilizes above started backend vapo server to g
 2. Open Frontend ios client app project in xcode - `open Frontend/Hangman/Hangman.xcodeproj` (This will open in xcode if you have it installed)
 3. After the xcode project opens successfully, first build the project by doing `CMD+B` and run the project using `CMD+R`. 
 4. Depending upon what device you connect (physical or simulator), it should open in that and start the Hangman game. 
+
+## Lights, Camera, Action
+<img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Gifs/Game.gif" width="250" height="500">
+
+## Screenshots
+<div>
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e1.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e2.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e3.png" width="350" height="350">
+</div>
+<div>
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e4.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e5.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e6.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/e7.png" width="350" height="350">
+</div>
+*************
+
+## Localization - Spanish
+<div>
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s1.png" width="350" height="350">
+    <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s2.png" width="350" height="350">
+</div>
