@@ -191,7 +191,9 @@
                 [self.navigationController pushViewController:gameVC animated:YES];
             });
         } else {
-            NSLog(@"Error");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNoInternetAlert];
+            });
         }
     }];
     [dataTask resume];
