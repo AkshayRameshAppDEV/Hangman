@@ -22,7 +22,8 @@
 -(void) setUpHorizontalStackViewButtons;
 -(void) setUpStackViews;
 -(void) clickThemesButton: (UIButton*) sender;
-- (void) showNoInternetAlert;
+-(void) showNoInternetAlert;
+-(void) getWordOfTheDayAndClueForThemeAndPlay: (NSString*) url;
 
 @end
 
