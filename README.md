@@ -31,7 +31,7 @@ After installing vapor or if you have vapor already, follow the instructions bel
 ```
 serve --hostname YOUR_IP_ADDRESS --port 8080
 ```
-<img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/ThemesServer-Info.png" width="1000" height="800"> 
+<img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/ThemesServer-Info.png" width="1000" height="800"> 
 
 
 ## Frontend:
