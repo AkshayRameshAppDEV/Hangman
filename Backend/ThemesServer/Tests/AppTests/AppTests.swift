@@ -13,4 +13,22 @@ final class AppTests: XCTestCase {
             })
         }
     }
+    
+    func testThemesEndpointBadRequest() throws {
+        let app = Application(.testing)
+        defer { app.shutdown() }
+        try configure(app)
+        try app.test(.GET, "themes/%", afterResponse: { res in
+            XCTAssertEqual(res.status, .badRequest)
+        })
+    }
+    
+    func testThemesInvalidReturnJSON() throws {
+        let app = Application(.testing)
+        defer { app.shutdown() }
+        try configure(app)
+        try app.test(.GET, "themes/6", afterResponse: { res in
+            XCTAssertEqual(res.body.string, "{}")
+        })
+    }
 }
