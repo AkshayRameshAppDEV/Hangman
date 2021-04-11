@@ -42,8 +42,12 @@ This is the iOS client app which utilizes above started backend vapo server to g
 3. After the xcode project opens successfully, first build the project by doing `CMD+B` and run the project using `CMD+R`. 
 4. Depending upon what device you connect (physical or simulator), it should open in that and start the Hangman game. 
 
+***************************************
+
 ## Lights, Camera, Action
 <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Gifs/Game.gif" width="250" height="500">
+
+***************************************
 
 ## Screenshots
 <div>
@@ -66,3 +70,8 @@ This is the iOS client app which utilizes above started backend vapo server to g
     <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s1.png" width="250" height="500">
     <img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Screenshots/s2.png" width="250" height="500">
 </div>
+
+***************************************
+
+## Light To Dark Mode Transition
+<img src="https://github.com/AkshayRameshAppDEV/Hangman/blob/main/Gifs/LightToDarkMode.gif" width="250" height="500">
